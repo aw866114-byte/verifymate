@@ -107,6 +107,22 @@ function render(d){
   h+=`<div class="card"><div class="scorewrap"><div class="score">${d.score??'–'}</div>
       <div><div class="verdict v-${v}">${v}</div><div class="muted" style="margin-top:6px">${esc(d.url)}</div></div></div></div>`;
   // issues
+  // ---- CAN IT ACTUALLY BE DELIVERED? ----
+  const fu = d.fulfilment;
+  if(fu && fu.checked){
+    const bad = fu.nothingToSend;
+    h+=`<div class="card"><h2>Deliverable? — what a buyer actually receives</h2>
+        <div class="row"><span class="l">Checkouts on this page</span><span class="r">${fu.checked}</span></div>
+        <div class="row"><span class="l">Ready to send</span><span class="r"><b style="color:var(--good)">${fu.ready}</b></span></div>
+        <div class="row"><span class="l">Nothing staged to send</span><span class="r"><b style="color:${bad?'var(--bad)':'var(--good)'}">${bad}</b></span></div>`;
+    fu.rows.forEach(r=>{
+      const col = r.status==='READY' ? 'var(--good)' : (r.status==='UNKNOWN' ? 'var(--warn)' : 'var(--bad)');
+      h+=`<div class="row"><span class="l">${esc(r.product)} ${r.price?`<span class="muted">${esc(r.price)}</span>`:''}</span>
+          <span class="r"><b style="color:${col}">${esc(r.status)}</b> · ${esc(r.detail)}</span></div>`;
+    });
+    h+='</div>';
+  }
+
   if(f.issues&&f.issues.length){ h+='<div class="card"><h2>What needs attention</h2>'; f.issues.forEach(i=>h+=`<div class="issue">${esc(i)}</div>`); h+='</div>'; }
   // functional
   h+='<div class="card"><h2>Functional — clicked &amp; followed</h2><div class="grid">';
