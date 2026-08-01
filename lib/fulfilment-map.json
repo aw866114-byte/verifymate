@@ -1,0 +1,1207 @@
+{
+ "generated": "2026-08-01",
+ "source": "claude\\ORDERS_FULFILLMENT (mirrored to Downloads)",
+ "note": "The worker attaches EVERY file listed for the folder, minus old sales pages, .bak and README.",
+ "map": {
+  "bJe00l43nfBt2xG50i3oA0e": {
+   "stripe_link_id": "bJe00l43nfBt2xG50i3oA0e",
+   "product": "AI Navigator MEGA Master Edition",
+   "price_usd": "697",
+   "folder": "AI Navigator MEGA",
+   "files": [
+    "AI_Navigator_MEGA_v2_Mastery_Edition.html",
+    "AI_Navigator_MEGA_v3_Master_Tier_Expansion.html",
+    "AI_Navigator_MEGA_v4_Master_Edition.html"
+   ],
+   "bytes": 491901,
+   "match_score": 0.85
+  },
+  "bJe9AVgQ9fBt6NW3We3oA0s": {
+   "stripe_link_id": "bJe9AVgQ9fBt6NW3We3oA0s",
+   "product": "AI Platform Mastery",
+   "price_usd": "397",
+   "folder": "AI Platform Mastery",
+   "files": [
+    "AI_Platform_Mastery_v2_Master.html",
+    "module_03_gemini.html",
+    "module_02_claude.html",
+    "module_06_canva.html",
+    "module_11_business_ai.html",
+    "module_09_runway_eleven.html",
+    "module_13_crewai.html",
+    "module_04_perplexity.html",
+    "module_14_future_horizon.html",
+    "module_07_jasper_copy.html",
+    "module_12_ollama.html",
+    "module_05_midjourney.html",
+    "module_10_cursor.html",
+    "module_08_zapier_make.html",
+    "module_01_chatgpt.html"
+   ],
+   "bytes": 511315,
+   "match_score": 100.0
+  },
+  "4gM28tgQ9891fks50i3oA0L": {
+   "stripe_link_id": "4gM28tgQ9891fks50i3oA0L",
+   "product": "AML/KYC Forensic Audit Toolkit",
+   "price_usd": "497",
+   "folder": "AML KYC Forensic Audit Toolkit",
+   "files": [
+    "aml-kyc-forensic-audit.html"
+   ],
+   "bytes": 52068,
+   "match_score": 100.0
+  },
+  "7sYcN76bv0Gzb4ceAS3oA0n": {
+   "stripe_link_id": "7sYcN76bv0Gzb4ceAS3oA0n",
+   "product": "AU Accounting Firm Toolkit",
+   "price_usd": "397",
+   "folder": "AU Accounting Firm Toolkit",
+   "files": [
+    "AU_Accounting_Firm_Toolkit.html",
+    "AU_Accounting_Firm_Toolkit.zip"
+   ],
+   "bytes": 44655,
+   "match_score": 100.0
+  },
+  "28EcN743nah98W43We3oA0A": {
+   "stripe_link_id": "28EcN743nah98W43We3oA0A",
+   "product": "AU Bookkeeping Mastery",
+   "price_usd": "197",
+   "folder": "AU Bookkeeping Mastery",
+   "files": [
+    "AU_Bookkeeping_Mastery.html"
+   ],
+   "bytes": 19361,
+   "match_score": 100.0
+  },
+  "eVqbJ36bv60T0pyeAS3oA1a": {
+   "stripe_link_id": "eVqbJ36bv60T0pyeAS3oA1a",
+   "product": "Affiliate & Partnership Compliance Toolkit",
+   "price_usd": "497",
+   "folder": "Affiliate and Partnership Compliance Toolkit",
+   "files": [
+    "affiliate-partnership-compliance.html"
+   ],
+   "bytes": 24848,
+   "match_score": 100.0
+  },
+  "eVq4gBdDX2OHc8g3We3oA1g": {
+   "stripe_link_id": "eVq4gBdDX2OHc8g3We3oA1g",
+   "product": "Beneficial Ownership / FinCEN BOI Reporting Toolkit",
+   "price_usd": "497",
+   "folder": "Beneficial Ownership BOI Reporting Toolkit",
+   "files": [
+    "beneficial-ownership-boi-reporting.html"
+   ],
+   "bytes": 26206,
+   "match_score": 1.08
+  },
+  "28EfZjczT0Gzc8g3We3oA0v": {
+   "stripe_link_id": "28EfZjczT0Gzc8g3We3oA0v",
+   "product": "CCO Onboarding Mastery",
+   "price_usd": "197",
+   "folder": "CCO Onboarding Mastery",
+   "files": [
+    "CCO_Onboarding_Mastery.zip",
+    "Master_Buyer_Journey_Map.html",
+    "First_100_Days_As_CCO_Playbook.html",
+    "Welcome_Sequences_All_Products.html",
+    "Custom_Protocol_Build_Intake.html",
+    "00_CCO_Onboarding_Mastery_START_HERE.html",
+    "Welcome_Concierge_Buyer.html",
+    "Founders_Circle_Welcome_Pin.html"
+   ],
+   "bytes": 83374,
+   "match_score": 100.0
+  },
+  "5kQeVfbvP0Gz4FOeAS3oA0j": {
+   "stripe_link_id": "5kQeVfbvP0Gz4FOeAS3oA0j",
+   "product": "CPA Quarterly Operator Systems",
+   "price_usd": "497",
+   "folder": "CPA Quarterly Operator Systems",
+   "files": [
+    "CPA_Quarterly_Operating_System.html"
+   ],
+   "bytes": 20509,
+   "match_score": 100.0
+  },
+  "4gM6oJ7fz891c8gfEW3oA1c": {
+   "stripe_link_id": "4gM6oJ7fz891c8gfEW3oA1c",
+   "product": "Capital & Liquidity Management Toolkit",
+   "price_usd": "497",
+   "folder": "Capital and Liquidity Management Toolkit",
+   "files": [
+    "capital-liquidity-management.html"
+   ],
+   "bytes": 24264,
+   "match_score": 100.0
+  },
+  "5kQ28tarL8911tC78q3oA17": {
+   "stripe_link_id": "5kQ28tarL8911tC78q3oA17",
+   "product": "Card Program Compliance Toolkit",
+   "price_usd": "497",
+   "folder": "Card Program Compliance Toolkit",
+   "files": [
+    "card-program-compliance.html"
+   ],
+   "bytes": 24414,
+   "match_score": 100.0
+  },
+  "00w6oJdDXgFxc8g3We3oA1r": {
+   "stripe_link_id": "00w6oJdDXgFxc8g3We3oA1r",
+   "product": "Career Coaching Suite",
+   "price_usd": "297",
+   "folder": "Career Coaching Suite",
+   "files": [
+    "Career_Coaching_Suite.html",
+    "Career_Coaching_Suite.zip"
+   ],
+   "bytes": 47033,
+   "match_score": 100.0
+  },
+  "6oUfZj57r0Gz5JS3We3oA0D": {
+   "stripe_link_id": "6oUfZj57r0Gz5JS3We3oA0D",
+   "product": "Career Mastery",
+   "price_usd": "77",
+   "folder": "Career Mastery",
+   "files": [
+    "career-mastery.html"
+   ],
+   "bytes": 35080,
+   "match_score": 100.0
+  },
+  "dRm00ldDXgFx5JSeAS3oA12": {
+   "stripe_link_id": "dRm00ldDXgFx5JSeAS3oA12",
+   "product": "Complaints Management Toolkit",
+   "price_usd": "497",
+   "folder": "Complaints Management Toolkit",
+   "files": [
+    "complaints-management.html"
+   ],
+   "bytes": 24844,
+   "match_score": 100.0
+  },
+  "8x2bJ39nH9d5gow2Sa3oA1k": {
+   "stripe_link_id": "8x2bJ39nH9d5gow2Sa3oA1k",
+   "product": "Compliance Cadence \u2014 the operator subscription",
+   "price_usd": null,
+   "folder": "Compliance Cadence",
+   "files": [
+    "FULFILMENT_WORKFLOW.md"
+   ],
+   "bytes": 5265,
+   "match_score": 0.65
+  },
+  "5kQfZj6bvdtlfksdwO3oA0O": {
+   "stripe_link_id": "5kQfZj6bvdtlfksdwO3oA0O",
+   "product": "Compliance Officer OS",
+   "price_usd": "497",
+   "folder": "Compliance Officer OS",
+   "files": [
+    "compliance-officer-os.html"
+   ],
+   "bytes": 40881,
+   "match_score": 100.0
+  },
+  "fZu9AV0Rb2OHego50i3oA0S": {
+   "stripe_link_id": "fZu9AV0Rb2OHego50i3oA0S",
+   "product": "Consumer Compliance OS",
+   "price_usd": "497",
+   "folder": "Consumer Compliance OS",
+   "files": [
+    "consumer-compliance-os.html"
+   ],
+   "bytes": 31058,
+   "match_score": 100.0
+  },
+  "28EeVf9nHgFxdckakC3oA0t": {
+   "stripe_link_id": "28EeVf9nHgFxdckakC3oA0t",
+   "product": "Critical Auditor Mastery",
+   "price_usd": "397",
+   "folder": "Critical Auditor Mastery",
+   "files": [
+    "Critical_Auditor_Mastery_FULL.html",
+    "level_3_advanced.html",
+    "level_2_intermediate.html",
+    "level_4_mastery.html",
+    "level_1_basic.html",
+    "industry_government.html",
+    "industry_financial_services.html",
+    "industry_manufacturing.html",
+    "industry_tech_saas.html",
+    "industry_healthcare.html",
+    "industry_non_profit.html"
+   ],
+   "bytes": 196405,
+   "match_score": 100.0
+  },
+  "dRm28tczTdtlego64m3oA1h": {
+   "stripe_link_id": "dRm28tczTdtlego64m3oA1h",
+   "product": "Cross-Border International Compliance Toolkit",
+   "price_usd": "497",
+   "folder": "Cross-Border International Compliance Toolkit",
+   "files": [
+    "cross-border-international-compliance.html"
+   ],
+   "bytes": 23354,
+   "match_score": 100.0
+  },
+  "9B6fZjeI1bld1tCakC3oA1m": {
+   "stripe_link_id": "9B6fZjeI1bld1tCakC3oA1m",
+   "product": "Cross-Platform Content Calendar",
+   "price_usd": "197",
+   "folder": "Cross-Platform Calendar",
+   "files": [
+    "Cross_Platform_52_Weeks.html"
+   ],
+   "bytes": 307276,
+   "match_score": 1.0
+  },
+  "8x2bJ3eI1exp2xG0K23oA0T": {
+   "stripe_link_id": "8x2bJ3eI1exp2xG0K23oA0T",
+   "product": "Crypto / Digital Asset Compliance Toolkit",
+   "price_usd": "497",
+   "folder": "Crypto Compliance Toolkit",
+   "files": [
+    "crypto-compliance.html"
+   ],
+   "bytes": 30562,
+   "match_score": 0.85
+  },
+  "9B600l0Rbah95JSboG3oA1q": {
+   "stripe_link_id": "9B600l0Rbah95JSboG3oA1q",
+   "product": "Decision Coaching Suite",
+   "price_usd": "297",
+   "folder": "Decision Coaching Suite",
+   "files": [
+    "Decision_Coaching_Suite.html",
+    "Decision_Coaching_Suite.zip"
+   ],
+   "bytes": 53050,
+   "match_score": 100.0
+  },
+  "5kQ28tczT74X7S0csK3oA0E": {
+   "stripe_link_id": "5kQ28tczT74X7S0csK3oA0E",
+   "product": "Decision Mastery",
+   "price_usd": "77",
+   "folder": "Decision Mastery",
+   "files": [
+    "decision-mastery.html"
+   ],
+   "bytes": 37162,
+   "match_score": 100.0
+  },
+  "3cI9AV6bv4WP3BK78q3oA0q": {
+   "stripe_link_id": "3cI9AV6bv4WP3BK78q3oA0q",
+   "product": "Demand Engineering Mastery",
+   "price_usd": "397",
+   "folder": "Demand Engineering Mastery",
+   "files": [
+    "Demand_Engineering_Mastery.html",
+    "Demand_Engineering_Mastery.zip",
+    "SEO_Articles_5_Pack.html"
+   ],
+   "bytes": 159388,
+   "match_score": 100.0
+  },
+  "fZu4gB8jD2OH1tCdwO3oA1F": {
+   "stripe_link_id": "fZu4gB8jD2OH1tCdwO3oA1F",
+   "product": "Enlightened Barter & Community Mastery",
+   "price_usd": "697",
+   "folder": "Enlightened Barter Community Mastery",
+   "files": [
+    "enlightened_barter_community_mastery.html",
+    "enlightened_barter_community_mastery_personal_77.html"
+   ],
+   "bytes": 99387,
+   "match_score": 1.05
+  },
+  "4gM5kF2Zj1KDdck2Sa3oA10": {
+   "stripe_link_id": "4gM5kF2Zj1KDdck2Sa3oA10",
+   "product": "Examination Readiness Toolkit",
+   "price_usd": "497",
+   "folder": "Examination Readiness Toolkit",
+   "files": [
+    "examination-readiness.html"
+   ],
+   "bytes": 58820,
+   "match_score": 100.0
+  },
+  "6oUfZj6bv74Xb4ccsK3oA0u": {
+   "stripe_link_id": "6oUfZj6bv74Xb4ccsK3oA0u",
+   "product": "Expired Copyright Mastery",
+   "price_usd": "197",
+   "folder": "Expired Copyright Mastery",
+   "files": [
+    "_v2_complete.html",
+    "00_master.html",
+    "_dashboard.html",
+    "_v41_complete.html",
+    "14_derivatives.html",
+    "17_licensing.html",
+    "12_tracking.html",
+    "13_legal.html",
+    "16_taxes.html",
+    "18_crowdfunding.html",
+    "21_seo.html",
+    "19_youtube.html",
+    "15_brand.html",
+    "20_nft.html",
+    "23_productization.html",
+    "22_consultant_playbook.html",
+    "24_authority_playbook.html",
+    "module_03_monetization_engines.html",
+    "module_23_productization_recipes.html",
+    "module_22_consultant_playbook.html",
+    "module_24_authority_playbook.html",
+    "module_14_derivatives_sell.html",
+    "module_19_youtube_monetization.html",
+    "module_18_crowdfunding.html",
+    "module_16_taxes_business.html",
+    "module_21_seo_pd_listings.html",
+    "module_12_tracking_analytics.html",
+    "module_13_legal_fair_use.html",
+    "module_15_brand_direct_store.html",
+    "module_01_six_step_search.html",
+    "module_20_nft_blockchain.html",
+    "module_02_asset_strategies.html",
+    "module_08_prepared_path.html",
+    "module_10_defensive_publishing.html",
+    "module_09_trademark_awareness.html",
+    "module_17_licensing_wholesale.html",
+    "module_05_practical_workflow.html",
+    "module_04_risk_mitigation.html",
+    "module_07_critical_warnings.html",
+    "module_00_mindset_legal_threshold.html",
+    "module_06_tool_mastery.html"
+   ],
+   "bytes": 1364693,
+   "match_score": 100.0
+  },
+  "4gM5kFbvPblda0878q3oA1o": {
+   "stripe_link_id": "4gM5kFbvPblda0878q3oA1o",
+   "product": "Financial Planner Coaching Suite",
+   "price_usd": "497",
+   "folder": "Financial Planner Coaching Suite",
+   "files": [
+    "Financial_Planner_Coaching_Suite.html",
+    "Financial_Planner_Coaching_Suite.zip"
+   ],
+   "bytes": 71631,
+   "match_score": 100.0
+  },
+  "28E28t7fzfBt3BKdwO3oA0m": {
+   "stripe_link_id": "28E28t7fzfBt3BKdwO3oA0m",
+   "product": "Fintech CCO Quarterly Operator Systems",
+   "price_usd": "497",
+   "folder": "Fintech CCO Quarterly Operator Systems",
+   "files": [
+    "Fintech_CCO_Quarterly_Operating_System.html"
+   ],
+   "bytes": 24852,
+   "match_score": 100.0
+  },
+  "9B600ldDXbld6NWakC3oA0l": {
+   "stripe_link_id": "9B600ldDXbld6NWakC3oA0l",
+   "product": "Fintech CRO Quarterly Operator Systems",
+   "price_usd": "497",
+   "folder": "Fintech CRO Quarterly Operator Systems",
+   "files": [
+    "Fintech_CRO_Quarterly_Operating_System.html"
+   ],
+   "bytes": 17256,
+   "match_score": 100.0
+  },
+  "5kQ00l9nHdtl1tCboG3oA0i": {
+   "stripe_link_id": "5kQ00l9nHdtl1tCboG3oA0i",
+   "product": "Fintech Compliance Bundle",
+   "price_usd": "497",
+   "folder": "Fintech Compliance Bundle",
+   "files": [
+    "02_Master_Pricing.html",
+    "01_Critical_Auditor_Mastery.html",
+    "03_Policy_and_Maintenance.html"
+   ],
+   "bytes": 273646,
+   "match_score": 100.0
+  },
+  "00w4gB7fz74X1tCfEW3oA0k": {
+   "stripe_link_id": "00w4gB7fz74X1tCfEW3oA0k",
+   "product": "Fintech GC Quarterly Operator Systems",
+   "price_usd": "497",
+   "folder": "Fintech GC Quarterly Operator Systems",
+   "files": [
+    "Fintech_GC_Quarterly_Operating_System.html"
+   ],
+   "bytes": 15534,
+   "match_score": 100.0
+  },
+  "eVqbJ3bvPexpgowcsK3oA0r": {
+   "stripe_link_id": "eVqbJ3bvPexpgowcsK3oA0r",
+   "product": "Fintech Pricing Mastery",
+   "price_usd": "397",
+   "folder": "Fintech Pricing Mastery",
+   "files": [
+    "fintech-pricing-mastery.html"
+   ],
+   "bytes": 39499,
+   "match_score": 100.0
+  },
+  "eVq9AVarL1KD2xG9gy3oA0z": {
+   "stripe_link_id": "eVq9AVarL1KD2xG9gy3oA0z",
+   "product": "Founder Press & Authority Mastery",
+   "price_usd": "197",
+   "folder": "Founder Press and Authority Mastery",
+   "files": [
+    "Founder_Press_and_Authority_Mastery.zip",
+    "Operating_Cadence_Weekly_Quarterly_Yearly.html",
+    "Affiliate_Partnership_Pitch_Deck.html",
+    "Press_Media_Kit.html",
+    "Annual_Planning_Template.html",
+    "00_Founder_Press_Authority_Mastery_START_HERE.html",
+    "Annual_Operating_Template.html"
+   ],
+   "bytes": 78134,
+   "match_score": 100.0
+  },
+  "fZu7sN8jDbld0py9gy3oA0U": {
+   "stripe_link_id": "fZu7sN8jDbld0py9gy3oA0U",
+   "product": "Fraud Operations Playbook",
+   "price_usd": "497",
+   "folder": "Fraud Operations Playbook",
+   "files": [
+    "fraud-operations.html"
+   ],
+   "bytes": 30554,
+   "match_score": 100.0
+  },
+  "dRm7sN1Vf1KDb4c2Sa3oA1z": {
+   "stripe_link_id": "dRm7sN1Vf1KDb4c2Sa3oA1z",
+   "product": "Group Coaching Operations Suite",
+   "price_usd": "297",
+   "folder": "Group Coaching Operations Suite",
+   "files": [
+    "group-coaching-operations-suite.html"
+   ],
+   "bytes": 37011,
+   "match_score": 100.0
+  },
+  "28EaEZbvPbld4FOdwO3oA1t": {
+   "stripe_link_id": "28EaEZbvPbld4FOdwO3oA1t",
+   "product": "Habit Coaching Suite",
+   "price_usd": "197",
+   "folder": "Habit Coaching Suite",
+   "files": [
+    "Habit_Coaching_Suite.html",
+    "Habit_Coaching_Suite.zip"
+   ],
+   "bytes": 43310,
+   "match_score": 100.0
+  },
+  "8x214p57rexpego64m3oA0F": {
+   "stripe_link_id": "8x214p57rexpego64m3oA0F",
+   "product": "Habit Mastery",
+   "price_usd": "77",
+   "folder": "Habit Mastery",
+   "files": [
+    "habit-mastery.html"
+   ],
+   "bytes": 29302,
+   "match_score": 100.0
+  },
+  "4gM14p57r3SL3BKcsK3oA1p": {
+   "stripe_link_id": "4gM14p57r3SL3BKcsK3oA1p",
+   "product": "Health Coaching Suite",
+   "price_usd": "297",
+   "folder": "Health Coaching Suite",
+   "files": [
+    "Health_Coaching_Suite.html",
+    "Health_Coaching_Suite.zip"
+   ],
+   "bytes": 47714,
+   "match_score": 100.0
+  },
+  "3cI14p9nHdtlfks0K23oA0C": {
+   "stripe_link_id": "3cI14p9nHdtlfks0K23oA0C",
+   "product": "Health Mastery",
+   "price_usd": "77",
+   "folder": "Health Mastery",
+   "files": [
+    "health-mastery.html"
+   ],
+   "bytes": 36234,
+   "match_score": 100.0
+  },
+  "4gM4gB7fz4WPgow50i3oA0X": {
+   "stripe_link_id": "4gM4gB7fz4WPgow50i3oA0X",
+   "product": "Information Security & SOC 2 OS",
+   "price_usd": "497",
+   "folder": "Information Security and SOC 2 OS",
+   "files": [
+    "infosec-soc2-os.html"
+   ],
+   "bytes": 27979,
+   "match_score": 100.0
+  },
+  "00w5kF6bv9d5dck2Sa3oA1b": {
+   "stripe_link_id": "00w5kF6bv9d5dck2Sa3oA1b",
+   "product": "Internal Audit Function Toolkit",
+   "price_usd": "497",
+   "folder": "Internal Audit Function Toolkit",
+   "files": [
+    "internal-audit-function.html"
+   ],
+   "bytes": 23504,
+   "match_score": 100.0
+  },
+  "3cI00larL8917S0eAS3oA0W": {
+   "stripe_link_id": "3cI00larL8917S0eAS3oA0W",
+   "product": "Lending Compliance OS",
+   "price_usd": "497",
+   "folder": "Lending Compliance OS",
+   "files": [
+    "lending-compliance-os.html"
+   ],
+   "bytes": 28244,
+   "match_score": 100.0
+  },
+  "eVq00l7fz0Gzb4c78q3oA1u": {
+   "stripe_link_id": "eVq00l7fz0Gzb4c78q3oA1u",
+   "product": "Life Coaching Suite",
+   "price_usd": "197",
+   "folder": "Life Coaching Suite",
+   "files": [
+    "Life_Coaching_Suite.html",
+    "Life_Coaching_Suite.zip"
+   ],
+   "bytes": 60714,
+   "match_score": 100.0
+  },
+  "6oU14p43nbld5JSdwO3oA05": {
+   "stripe_link_id": "6oU14p43nbld5JSdwO3oA05",
+   "product": "Life Protocol Mastery",
+   "price_usd": "77",
+   "folder": "Life Protocol Mastery",
+   "files": [
+    "life-protocol-mastery.html"
+   ],
+   "bytes": 44097,
+   "match_score": 100.0
+  },
+  "5kQ4gBeI1dtlgow78q3oA0K": {
+   "stripe_link_id": "5kQ4gBeI1dtlgow78q3oA0K",
+   "product": "LinkedIn Post Library",
+   "price_usd": "97",
+   "folder": "LinkedIn Post Library",
+   "files": [
+    "LinkedIn_Combined_82_Posts.html",
+    "linkedin_pin_025.png",
+    "linkedin_pin_004.png",
+    "linkedin_pin_001.png",
+    "linkedin_pin_012.png",
+    "linkedin_pin_003.png",
+    "linkedin_pin_011.png",
+    "linkedin_pin_015.png",
+    "linkedin_pin_018.png",
+    "linkedin_pin_016.png",
+    "linkedin_pin_019.png",
+    "linkedin_pin_002.png",
+    "linkedin_pin_023.png",
+    "linkedin_pin_005.png",
+    "linkedin_pin_024.png",
+    "linkedin_pin_007.png",
+    "linkedin_pin_017.png",
+    "linkedin_pin_006.png",
+    "linkedin_pin_014.png",
+    "linkedin_pin_010.png",
+    "linkedin_pin_013.png",
+    "linkedin_pin_009.png",
+    "linkedin_pin_022.png",
+    "linkedin_pin_021.png",
+    "linkedin_pin_008.png",
+    "linkedin_pin_020.png",
+    "pins_metadata.json"
+   ],
+   "bytes": 1072298,
+   "match_score": 100.0
+  },
+  "14A6oJ9nH3SLb4c0K23oA0Z": {
+   "stripe_link_id": "14A6oJ9nH3SLb4c0K23oA0Z",
+   "product": "Marketing Compliance Toolkit",
+   "price_usd": "497",
+   "folder": "Marketing Compliance Toolkit",
+   "files": [
+    "marketing-compliance.html"
+   ],
+   "bytes": 28060,
+   "match_score": 100.0
+  },
+  "aFa9AV9nH2OHdckfEW3oA0d": {
+   "stripe_link_id": "aFa9AV9nH2OHdckfEW3oA0d",
+   "product": "Mastery Empire",
+   "price_usd": "697",
+   "folder": "Mastery Empire",
+   "files": [
+    "MASTERY_EMPIRE.html"
+   ],
+   "bytes": 80648,
+   "match_score": 100.0
+  },
+  "7sY9AVbvP3SL3BKgJ03oA14": {
+   "stripe_link_id": "7sY9AVbvP3SL3BKgJ03oA14",
+   "product": "Model Risk Management Toolkit",
+   "price_usd": "497",
+   "folder": "Model Risk Management Toolkit",
+   "files": [
+    "model-risk-management.html"
+   ],
+   "bytes": 25251,
+   "match_score": 100.0
+  },
+  "4gMcN757rcph7S03We3oA16": {
+   "stripe_link_id": "4gMcN757rcph7S03We3oA16",
+   "product": "Money Transmission Licensing Toolkit",
+   "price_usd": "497",
+   "folder": "Money Transmission Licensing Toolkit",
+   "files": [
+    "money-transmission-licensing.html"
+   ],
+   "bytes": 24528,
+   "match_score": 100.0
+  },
+  "7sY8wR2Zj74Xgow9gy3oA1j": {
+   "stripe_link_id": "7sY8wR2Zj74Xgow9gy3oA1j",
+   "product": "NYDFS Cybersecurity (Part 500) Toolkit",
+   "price_usd": "497",
+   "folder": "NYDFS Cybersecurity Part 500 Toolkit",
+   "files": [
+    "nydfs-cybersecurity-part-500.html"
+   ],
+   "bytes": 22605,
+   "match_score": 0.73
+  },
+  "8x2cN79nHah9a08eAS3oA1s": {
+   "stripe_link_id": "8x2cN79nHah9a08eAS3oA1s",
+   "product": "Negotiation Coaching Suite",
+   "price_usd": "297",
+   "folder": "Negotiation Coaching Suite",
+   "files": [
+    "Negotiation_Coaching_Suite.html",
+    "Negotiation_Coaching_Suite.zip"
+   ],
+   "bytes": 46621,
+   "match_score": 100.0
+  },
+  "7sY5kF9nHdtl5JScsK3oA0B": {
+   "stripe_link_id": "7sY5kF9nHdtl5JScsK3oA0B",
+   "product": "Negotiation Mastery",
+   "price_usd": "77",
+   "folder": "Negotiation Mastery",
+   "files": [
+    "negotiation-mastery.html"
+   ],
+   "bytes": 34656,
+   "match_score": 100.0
+  },
+  "aFa6oJ43nfBtfks64m3oA1i": {
+   "stripe_link_id": "aFa6oJ43nfBtfks64m3oA1i",
+   "product": "Open Banking / Section 1033 Compliance Toolkit",
+   "price_usd": "497",
+   "folder": "Open Banking Section 1033 Compliance Toolkit",
+   "files": [
+    "open-banking-section-1033.html"
+   ],
+   "bytes": 20408,
+   "match_score": 100.0
+  },
+  "dRm8wR7fzdtl1tCgJ03oA13": {
+   "stripe_link_id": "dRm8wR7fzdtl1tCgJ03oA13",
+   "product": "Operational Risk & Resilience Toolkit",
+   "price_usd": "497",
+   "folder": "Operational Risk and Resilience Toolkit",
+   "files": [
+    "operational-risk-resilience.html"
+   ],
+   "bytes": 25099,
+   "match_score": 100.0
+  },
+  "fZu00lbvP60T2xGgJ03oA0p": {
+   "stripe_link_id": "fZu00lbvP60T2xGgJ03oA0p",
+   "product": "Operator Content Mastery",
+   "price_usd": "397",
+   "folder": "Operator Content Mastery",
+   "files": [
+    "Module_2_Cross_Platform_Calendar.html",
+    "Module_1_LinkedIn_Post_Library.html",
+    "Module_1b_LinkedIn_90_Day_Calendar_52_Posts.html",
+    "Module_4_YouTube_Scripts.html",
+    "Module_3_Newsletter_Library.html",
+    "Module_5_Lifecycle_Emails.html",
+    "Module_4b_YouTube_Podcast_Scripts.html",
+    "Module_6_Lead_Magnet.html"
+   ],
+   "bytes": 509492,
+   "match_score": 100.0
+  },
+  "cNi4gB0Rb1KDgowfEW3oA03": {
+   "stripe_link_id": "cNi4gB0Rb1KDgowfEW3oA03",
+   "product": "Operator Empire",
+   "price_usd": "697",
+   "folder": "Operator Empire",
+   "files": [
+    "Operator_Empire_v6_LATEST.html",
+    "module_09_recurring_revenue_engine.html",
+    "module_14_capital_allocation_model.html",
+    "module_15_exit_readiness_audit.html",
+    "module_12_partnership_jv_blueprint.html",
+    "module_11_ip_asset_vault.html",
+    "module_02_tactical_pivot_map.html",
+    "module_10_content_repurposing_matrix.html",
+    "module_13_horizon_map_multiyear.html",
+    "module_05_delegation_blueprint.html",
+    "module_06_outsourcing_os.html",
+    "module_08_offer_stack_atomization.html",
+    "module_07_ai_integration_playbook.html",
+    "module_04_master_sop_blueprint.html",
+    "module_03_empire_telemetry_dashboard.html",
+    "module_16_legacy_succession_charter.html",
+    "module_01_biometric_recovery_ledger.html"
+   ],
+   "bytes": 176399,
+   "match_score": 100.0
+  },
+  "14A3cx8jD3SLc8g3We3oA0w": {
+   "stripe_link_id": "14A3cx8jD3SLc8g3We3oA0w",
+   "product": "Operator Foundations",
+   "price_usd": "197",
+   "folder": "Operator Foundations",
+   "files": [
+    "00_Operator_Foundations_FULL.html",
+    "Operator_Foundations.zip",
+    "module_07_premortem_postmortem.html",
+    "module_02_cognitive_override_cards.html",
+    "module_04_fatigue_warning_tracker.html",
+    "module_06_outbound_comms_framework.html",
+    "module_03_triage_decision_sheet.html",
+    "module_05_treasury_cash_map.html",
+    "module_01_time_interception_log.html",
+    "module_08_closers_pitch_architecture.html"
+   ],
+   "bytes": 159015,
+   "match_score": 100.0
+  },
+  "8x28wReI1ah9dck9gy3oA08": {
+   "stripe_link_id": "8x28wReI1ah9dck9gy3oA08",
+   "product": "Operator Master Edition \u2014 Every Product, One Purchase",
+   "price_usd": "1,497",
+   "folder": "Operator Master Edition",
+   "files": [
+    "PROTOCOL_COLLECTIVE_MASTER.html"
+   ],
+   "bytes": 111110,
+   "match_score": 0.68
+  },
+  "14A14pczTgFxgow64m3oA0o": {
+   "stripe_link_id": "14A14pczTgFxgow64m3oA0o",
+   "product": "Outbound Sales Mastery",
+   "price_usd": "397",
+   "folder": "Outbound Sales Mastery",
+   "files": [
+    "Outbound_DM_Library.html",
+    "Outbound_Sales_Mastery.zip",
+    "Sales_Pages_Top_3_Products.html",
+    "Master_Buyer_Journey_Map.html",
+    "00_Outbound_Sales_Mastery_START_HERE.html"
+   ],
+   "bytes": 79474,
+   "match_score": 100.0
+  },
+  "14A6oJ8jD9d53BKdwO3oA1y": {
+   "stripe_link_id": "14A6oJ8jD9d53BKdwO3oA1y",
+   "product": "People Operations Toolkit",
+   "price_usd": "497",
+   "folder": "People Operations Toolkit",
+   "files": [
+    "people-operations-toolkit.html"
+   ],
+   "bytes": 41015,
+   "match_score": 100.0
+  },
+  "fZuaEZfM59d5egoboG3oA1B": {
+   "stripe_link_id": "fZuaEZfM59d5egoboG3oA1B",
+   "product": "Personal Operator OS",
+   "price_usd": "497",
+   "folder": "Personal Operator OS",
+   "files": [
+    "Personal_Operator_OS.html"
+   ],
+   "bytes": 87861,
+   "match_score": 100.0
+  },
+  "9B63cx1Vf3SLego3We3oA0x": {
+   "stripe_link_id": "9B63cx1Vf3SLego3We3oA0x",
+   "product": "Policy Maintenance Mastery",
+   "price_usd": "197",
+   "folder": "Policy Maintenance Mastery",
+   "files": [
+    "Policy_Maintenance_Mastery.html",
+    "Policy_Maintenance_Mastery.zip"
+   ],
+   "bytes": 128769,
+   "match_score": 100.0
+  },
+  "bJe5kFdDXcphdckgJ03oA0J": {
+   "stripe_link_id": "bJe5kFdDXcphdckgJ03oA0J",
+   "product": "Pricing Mastery",
+   "price_usd": "397",
+   "folder": "Pricing Mastery",
+   "files": [
+    "Master_Pricing_Mastery.html"
+   ],
+   "bytes": 131468,
+   "match_score": 100.0
+  },
+  "14A9AV2Zj1KD8W4eAS3oA0V": {
+   "stripe_link_id": "14A9AV2Zj1KD8W4eAS3oA0V",
+   "product": "Privacy & Data Governance Toolkit",
+   "price_usd": "497",
+   "folder": "Privacy Data Governance Toolkit",
+   "files": [
+    "privacy-data-governance.html"
+   ],
+   "bytes": 30098,
+   "match_score": 1.05
+  },
+  "aFa8wRczT2OH3BK8cu3oA0f": {
+   "stripe_link_id": "aFa8wRczT2OH3BK8cu3oA0f",
+   "product": "Protocol Collective: Empire Edition",
+   "price_usd": "697",
+   "folder": "Empire Edition",
+   "files": [
+    "Protocol_Collective_Empire_Dashboard.html"
+   ],
+   "bytes": 2360515,
+   "match_score": 0.75
+  },
+  "5kQdRbfM560TegofEW3oA18": {
+   "stripe_link_id": "5kQdRbfM560TegofEW3oA18",
+   "product": "Records Management & Retention Toolkit",
+   "price_usd": "497",
+   "folder": "Records Management and Retention Toolkit",
+   "files": [
+    "records-management-retention.html"
+   ],
+   "bytes": 24866,
+   "match_score": 100.0
+  },
+  "3cI4gB7fzdtlgowgJ03oA0P": {
+   "stripe_link_id": "3cI4gB7fzdtlgowgJ03oA0P",
+   "product": "RegTech Vendor Audit Framework",
+   "price_usd": "497",
+   "folder": "RegTech Vendor Audit Framework",
+   "files": [
+    "regtech-vendor-audit.html"
+   ],
+   "bytes": 42559,
+   "match_score": 100.0
+  },
+  "fZueVfczTfBt5JS9gy3oA15": {
+   "stripe_link_id": "fZueVfczTfBt5JS9gy3oA15",
+   "product": "Regulatory Change Management Toolkit",
+   "price_usd": "497",
+   "folder": "Regulatory Change Management Toolkit",
+   "files": [
+    "regulatory-change-management.html"
+   ],
+   "bytes": 24570,
+   "match_score": 100.0
+  },
+  "9B600lczTcph1tC50i3oA0y": {
+   "stripe_link_id": "9B600lczTcph1tC50i3oA0y",
+   "product": "Sales Enablement Mastery",
+   "price_usd": "197",
+   "folder": "Sales Enablement Mastery",
+   "files": [
+    "Sales_Enablement_Mastery.zip",
+    "Sales_Pages_Top_3_Sovereign_Master_Concierge.html",
+    "Sales_Pages_Top_3_Products.html",
+    "faq.html",
+    "Operator_Case_Studies_5_Pack.html",
+    "ROI_Calculator_For_Prospects.html",
+    "Competitor_Comparison_vs_GRC_Platforms.html",
+    "terms.html",
+    "00_Sales_Enablement_Mastery_START_HERE.html",
+    "privacy.html",
+    "refunds.html"
+   ],
+   "bytes": 124802,
+   "match_score": 100.0
+  },
+  "9B67sN7fzah9ego78q3oA0Y": {
+   "stripe_link_id": "9B67sN7fzah9ego78q3oA0Y",
+   "product": "Sanctions / OFAC Operating Toolkit",
+   "price_usd": "497",
+   "folder": "Sanctions OFAC Operating Toolkit",
+   "files": [
+    "sanctions-ofac.html"
+   ],
+   "bytes": 27296,
+   "match_score": 100.0
+  },
+  "9B6aEZ43n3SL6NWakC3oA1d": {
+   "stripe_link_id": "9B6aEZ43n3SL6NWakC3oA1d",
+   "product": "Securities & Investment Adviser Compliance Toolkit",
+   "price_usd": "497",
+   "folder": "Securities and Investment Adviser Compliance Toolkit",
+   "files": [
+    "securities-investment-adviser.html"
+   ],
+   "bytes": 24033,
+   "match_score": 100.0
+  },
+  "28E4gBeI1dtl2xGgJ03oA1x": {
+   "stripe_link_id": "28E4gBeI1dtl2xGgJ03oA1x",
+   "product": "Single-File Operator Kit",
+   "price_usd": "297",
+   "folder": "Single-File Operator Kit",
+   "files": [
+    "single-file-operator-kit.html"
+   ],
+   "bytes": 39877,
+   "match_score": 100.0
+  },
+  "00wfZjarL2OHdck64m3oA1A": {
+   "stripe_link_id": "00wfZjarL2OHdck64m3oA1A",
+   "product": "Sleep Protocol Tracker \u2014 Practitioner Edition",
+   "price_usd": null,
+   "folder": "Sleep Protocol Tracker Practitioner Edition",
+   "files": [
+    "sleep-protocol-tracker-practitioner.html"
+   ],
+   "bytes": 43061,
+   "match_score": 100.0
+  },
+  "8x2cN72Zj60TdckcsK3oA0g": {
+   "stripe_link_id": "8x2cN72Zj60TdckcsK3oA0g",
+   "product": "Sovereign CEO Operator Systems \u2014 8 Protocols + Master Integration",
+   "price_usd": "697",
+   "folder": "Sovereign CEO Operator Systems",
+   "files": [
+    "PROTOCOL_COLLECTIVE_MASTER.html",
+    "master-revenue-architecture.html",
+    "operational-velocity.html",
+    "talent-multiplication.html",
+    "capital-efficiency.html",
+    "ceo-sovereignty.html",
+    "authority-architecture.html",
+    "revenue-architecture.html",
+    "pricing-strategy.html",
+    "command-center.html"
+   ],
+   "bytes": 381943,
+   "match_score": 0.75
+  },
+  "28E7sN1Vf4WPa08boG3oA0R": {
+   "stripe_link_id": "28E7sN1Vf4WPa08boG3oA0R",
+   "product": "Sponsor Bank Compliance Toolkit",
+   "price_usd": "497",
+   "folder": "Sponsor Bank Compliance Toolkit",
+   "files": [
+    "sponsor-bank-compliance.html"
+   ],
+   "bytes": 36836,
+   "match_score": 100.0
+  },
+  "7sY8wR9nHdtl7S00K23oA1f": {
+   "stripe_link_id": "7sY8wR9nHdtl7S00K23oA1f",
+   "product": "Tax Information Reporting Compliance Toolkit",
+   "price_usd": "497",
+   "folder": "Tax Information Reporting Compliance Toolkit",
+   "files": [
+    "tax-information-reporting.html"
+   ],
+   "bytes": 21972,
+   "match_score": 100.0
+  },
+  "dRm8wRdDX74XdckeAS3oA1C": {
+   "stripe_link_id": "dRm8wRdDX74XdckeAS3oA1C",
+   "product": "The Operator Calculator Suite",
+   "price_usd": null,
+   "folder": "Calculator Suite",
+   "files": [
+    "Calculator_Suite.html"
+   ],
+   "bytes": 74971,
+   "match_score": 0.75
+  },
+  "28E14pfM574X3BK50i3oA1J": {
+   "stripe_link_id": "28E14pfM574X3BK50i3oA1J",
+   "product": "The Operator's Suite \u2014 Practitioner Commercial Licence",
+   "price_usd": null,
+   "folder": "Operator Suite Practitioner Commercial Licence",
+   "files": [
+    "The_Operators_Suite_PRACTITIONER_LETTER.pdf"
+   ],
+   "bytes": 1354871,
+   "match_score": 0.96
+  },
+  "8x228t6bvcphdck64m3oA1v": {
+   "stripe_link_id": "8x228t6bvcphdck64m3oA1v",
+   "product": "The Practitioner Suite \u2014 The Bundle",
+   "price_usd": null,
+   "folder": "The Practitioner Suite",
+   "files": [
+    "The_Practitioner_Suite.zip",
+    "Financial_Planner_Coaching_Suite.html",
+    "Therapy_and_Wellness_Suite.html",
+    "Life_Coaching_Suite.html",
+    "Decision_Coaching_Suite.html",
+    "Health_Coaching_Suite.html",
+    "Career_Coaching_Suite.html",
+    "Negotiation_Coaching_Suite.html",
+    "Habit_Coaching_Suite.html",
+    "The_Practitioner_Suite_Bundle.html"
+   ],
+   "bytes": 455274,
+   "match_score": 1.0
+  },
+  "6oU4gBdDXdtl3BK8cu3oA0a": {
+   "stripe_link_id": "6oU4gBdDXdtl3BK8cu3oA0a",
+   "product": "The Sovereign Empire Edition \u2014 The Integrated Operator Compendium",
+   "price_usd": "997",
+   "folder": "Sovereign Empire Edition",
+   "files": [
+    "Sovereign_Empire_Edition_Compendium_FULL.html"
+   ],
+   "bytes": 56171,
+   "match_score": 0.68
+  },
+  "14A14peI14WP1tC50i3oA07": {
+   "stripe_link_id": "14A14peI14WP1tC50i3oA07",
+   "product": "The Sovereign Operator Codex \u2014 APEX Edition",
+   "price_usd": "1,997",
+   "folder": "APEX Edition",
+   "files": [
+    "sovereign-operator-codex-apex.html"
+   ],
+   "bytes": 61638,
+   "match_score": 0.58
+  },
+  "7sY28t9nHexp2xGboG3oA1n": {
+   "stripe_link_id": "7sY28t9nHexp2xGboG3oA1n",
+   "product": "Therapy & Wellness Suite",
+   "price_usd": "197",
+   "folder": "Therapy and Wellness Suite",
+   "files": [
+    "Therapy_and_Wellness_Suite.html",
+    "Therapy_and_Wellness_Suite.zip"
+   ],
+   "bytes": 69348,
+   "match_score": 100.0
+  },
+  "3cI6oJ6bvgFx6NW8cu3oA11": {
+   "stripe_link_id": "3cI6oJ6bvgFx6NW8cu3oA11",
+   "product": "Third-Party Risk Management Operating Toolkit",
+   "price_usd": "497",
+   "folder": "Third-Party Risk Management Operating Toolkit",
+   "files": [
+    "third-party-risk-management.html"
+   ],
+   "bytes": 53449,
+   "match_score": 100.0
+  },
+  "aFa00l43n4WP6NW50i3oA0Q": {
+   "stripe_link_id": "aFa00l43n4WP6NW50i3oA0Q",
+   "product": "Treasury Operations Playbook",
+   "price_usd": "497",
+   "folder": "Treasury Operations Playbook",
+   "files": [
+    "treasury-operations.html"
+   ],
+   "bytes": 41990,
+   "match_score": 100.0
+  },
+  "aFacN72Zj4WP8W4csK3oA0H": {
+   "stripe_link_id": "aFacN72Zj4WP8W4csK3oA0H",
+   "product": "Vendor Management Mastery",
+   "price_usd": "397",
+   "folder": "Vendor Management Mastery",
+   "files": [
+    "Vendor_Management_Mastery.html"
+   ],
+   "bytes": 12855,
+   "match_score": 100.0
+  },
+  "6oU8wR0Rb0Gz1tCcsK3oA0I": {
+   "stripe_link_id": "6oU8wR0Rb0Gz1tCcsK3oA0I",
+   "product": "Wealth Mastery",
+   "price_usd": "77",
+   "folder": "Wealth Mastery",
+   "files": [
+    "wealth-mastery.html"
+   ],
+   "bytes": 52603,
+   "match_score": 100.0
+  },
+  "eVqfZj57r60Tb4cgJ03oA19": {
+   "stripe_link_id": "eVqfZj57r60Tb4cgJ03oA19",
+   "product": "Whistleblower & Ethics Hotline Toolkit",
+   "price_usd": "497",
+   "folder": "Whistleblower and Ethics Hotline Toolkit",
+   "files": [
+    "whistleblower-ethics-hotline.html"
+   ],
+   "bytes": 24416,
+   "match_score": 100.0
+  },
+  "bJe6oJfM54WP6NWcsK3oA1w": {
+   "stripe_link_id": "bJe6oJfM54WP6NWcsK3oA1w",
+   "product": "Wire Fraud / BEC Operations Toolkit",
+   "price_usd": "497",
+   "folder": "Wire Fraud BEC Operations Toolkit",
+   "files": [
+    "wire-fraud-bec-operations.html"
+   ],
+   "bytes": 23426,
+   "match_score": 100.0
+  }
+ },
+ "unmapped": [
+  {
+   "product": "Buy Now Pay Later (BNPL) Compliance Toolkit",
+   "price_usd": "497",
+   "stripe_link_id": "7sYeVfczTexpb4c9gy3oA1e",
+   "closest": "BNPL Compliance Toolkit",
+   "score": 0.23
+  },
+  {
+   "product": "Multi-Team Licence",
+   "price_usd": "997",
+   "stripe_link_id": "9B614p57r0Gzego9gy3oA09",
+   "closest": "Operator Suite Practitioner Commercial Licence",
+   "score": -0.1
+  },
+  {
+   "product": "The $100K/Month System \u2014 Honest Math, Real Plan",
+   "price_usd": "497",
+   "stripe_link_id": "5kQ14p2ZjgFxc8gboG3oA0h",
+   "closest": "Operator Operating System",
+   "score": -0.02
+  },
+  {
+   "product": "The $250K/Month Fintech System",
+   "price_usd": "697",
+   "stripe_link_id": "4gM5kFeI14WP1tC8cu3oA0c",
+   "closest": "Fintech Compliance Bundle",
+   "score": 0.02
+  },
+  {
+   "product": "The Codex Program \u2014 52-Week Self-Paced Curriculum",
+   "price_usd": "797",
+   "stripe_link_id": "28EbJ3dDX9d51tCeAS3oA0b",
+   "closest": "The Practitioner Suite",
+   "score": -0.02
+  }
+ ]
+}
