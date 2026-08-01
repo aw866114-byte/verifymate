@@ -1,0 +1,13 @@
+{
+  "name": "verifymate",
+  "version": "1.0.0",
+  "description": "VerifyMate — does your app actually work? Active functional + deliverability verification.",
+  "scripts": {
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "@sparticuz/chromium": "^123.0.0",
+    "playwright": "^1.62.1",
+    "puppeteer-core": "^22.0.0"
+  }
+}
