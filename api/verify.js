@@ -2,6 +2,7 @@
 // Works as a Vercel serverless function (module.exports = handler) and under the local dev server.
 const { runDeliverability } = require('../lib/integrity');
 const { runFunctional } = require('../lib/functional');
+const { checkFulfilment } = require('../lib/fulfilment');
 
 async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -18,6 +19,10 @@ async function handler(req, res) {
       runFunctional(url, {}).catch(e => ({ error: String(e), verdict: 'FAIL', issues: ['engine error: ' + String(e)] })),
     ]);
 
+    // ---- can what's for sale actually be delivered? ----
+    const fulfilment = checkFulfilment((func && func.links && func.links.checkout) || []);
+    if (fulfilment.issues.length && func && func.issues) func.issues.push(...fulfilment.issues);
+
     // compose a top-line score
     let score = 100;
     if (func.pageErrors && func.pageErrors.length) score -= 30;
@@ -25,9 +30,14 @@ async function handler(req, res) {
     if (deliv && deliv.findings)
       score -= Math.min(20, deliv.findings.length * 5);
     score = Math.max(0, score);
+    // A blocked scan has no score to give — never report a pass we didn't earn.
+    if (func && func.blocked) score = null;
 
     res.statusCode = 200;
-    res.end(JSON.stringify({ url, domain, score, deliverability: deliv, functional: func, ranAt: new Date ? undefined : undefined }));
+    if (fulfilment.nothingToSend) score = Math.max(0, score - 25 * fulfilment.nothingToSend);
+
+    res.statusCode = 200;
+    res.end(JSON.stringify({ url, domain, score, fulfilment, deliverability: deliv, functional: func, ranAt: new Date ? undefined : undefined }));
   } catch (e) {
     res.statusCode = 500;
     res.end(JSON.stringify({ error: String(e) }));
