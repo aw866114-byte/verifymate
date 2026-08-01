@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <linearGradient id="steel" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#f6f8fb"/><stop offset="0.24" stop-color="#c8ced7"/><stop offset="0.5" stop-color="#878d97"/><stop offset="0.76" stop-color="#ced4dc"/><stop offset="1" stop-color="#5f646c"/>
+    </linearGradient>
+    <linearGradient id="steelType" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="0.45" stop-color="#cfd5de"/><stop offset="0.55" stop-color="#7e838c"/><stop offset="1" stop-color="#d6dbe3"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0.7" y2="1">
+      <stop offset="0" stop-color="#fff0bd"/><stop offset="0.32" stop-color="#ffd15c"/><stop offset="0.68" stop-color="#dc9f24"/><stop offset="1" stop-color="#8e6320"/>
+    </linearGradient>
+    <radialGradient id="plate" cx="36%" cy="28%" r="80%">
+      <stop offset="0" stop-color="#252b35"/><stop offset="0.44" stop-color="#141821"/><stop offset="1" stop-color="#06080b"/>
+    </radialGradient>
+    <radialGradient id="warm" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffcf4d" stop-opacity="0.34"/><stop offset="0.6" stop-color="#ffcf4d" stop-opacity="0.08"/><stop offset="1" stop-color="#ffcf4d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sheen" x1="0.05" y1="0" x2="0.7" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.17"/><stop offset="0.42" stop-color="#ffffff" stop-opacity="0.035"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="brush" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.1 0.014" numOctaves="3" seed="11" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.14"/></feComponentTransfer>
+    </filter>
+    <filter id="struck" x="-35%" y="-35%" width="170%" height="170%">
+      <feDropShadow dx="3" dy="4" stdDeviation="2.2" flood-color="#000" flood-opacity="0.80"/>
+      <feDropShadow dx="-1.6" dy="-2" stdDeviation="1.2" flood-color="#ffffff" flood-opacity="0.42"/>
+    </filter>
+    <filter id="struckLite" x="-35%" y="-35%" width="170%" height="170%">
+      <feDropShadow dx="1.8" dy="2.4" stdDeviation="1.3" flood-color="#000" flood-opacity="0.78"/>
+      <feDropShadow dx="-1" dy="-1.2" stdDeviation="0.7" flood-color="#ffffff" flood-opacity="0.38"/>
+    </filter>
+    <filter id="deboss" x="-35%" y="-35%" width="170%" height="170%">
+      <feDropShadow dx="-1.2" dy="-1.4" stdDeviation="0.9" flood-color="#000" flood-opacity="0.85"/>
+      <feDropShadow dx="1.2" dy="1.6" stdDeviation="1" flood-color="#ffffff" flood-opacity="0.30"/>
+    </filter>
+    <filter id="accGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="cast" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="7" stdDeviation="10" flood-color="#000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+  <g filter="url(#cast)">
+    <g stroke="url(#steel)" stroke-width="4.4" stroke-linecap="round" opacity="0.92" filter="url(#struckLite)">
+      <line x1="300.00" y1="28.00" x2="300.00" y2="10.00"/>
+      <line x1="317.79" y1="28.58" x2="318.97" y2="10.62"/>
+      <line x1="335.50" y1="30.33" x2="337.85" y2="12.48"/>
+      <line x1="353.06" y1="33.23" x2="356.58" y2="15.57"/>
+      <line x1="370.40" y1="37.27" x2="375.06" y2="19.88"/>
+      <line x1="387.43" y1="42.44" x2="393.22" y2="25.39"/>
+      <line x1="404.09" y1="48.70" x2="410.98" y2="32.07"/>
+      <line x1="420.30" y1="56.05" x2="428.26" y2="39.91"/>
+      <line x1="436.00" y1="64.44" x2="445.00" y2="48.85"/>
+      <line x1="451.12" y1="73.84" x2="461.12" y2="58.87"/>
+      <line x1="465.58" y1="84.21" x2="476.54" y2="69.93"/>
+      <line x1="479.34" y1="95.50" x2="491.21" y2="81.97"/>
+      <line x1="492.33" y1="107.67" x2="505.06" y2="94.94"/>
+      <line x1="504.50" y1="120.66" x2="518.03" y2="108.79"/>
+      <line x1="515.79" y1="134.42" x2="530.07" y2="123.46"/>
+      <line x1="526.16" y1="148.88" x2="541.13" y2="138.88"/>
+      <line x1="535.56" y1="164.00" x2="551.15" y2="155.00"/>
+      <line x1="543.95" y1="179.70" x2="560.09" y2="171.74"/>
+      <line x1="551.30" y1="195.91" x2="567.93" y2="189.02"/>
+      <line x1="557.56" y1="212.57" x2="574.61" y2="206.78"/>
+      <line x1="562.73" y1="229.60" x2="580.12" y2="224.94"/>
+      <line x1="566.77" y1="246.94" x2="584.43" y2="243.42"/>
+      <line x1="569.67" y1="264.50" x2="587.52" y2="262.15"/>
+      <line x1="571.42" y1="282.21" x2="589.38" y2="281.03"/>
+      <line x1="572.00" y1="300.00" x2="590.00" y2="300.00"/>
+      <line x1="571.42" y1="317.79" x2="589.38" y2="318.97"/>
+      <line x1="569.67" y1="335.50" x2="587.52" y2="337.85"/>
+      <line x1="566.77" y1="353.06" x2="584.43" y2="356.58"/>
+      <line x1="562.73" y1="370.40" x2="580.12" y2="375.06"/>
+      <line x1="557.56" y1="387.43" x2="574.61" y2="393.22"/>
+      <line x1="551.30" y1="404.09" x2="567.93" y2="410.98"/>
+      <line x1="543.95" y1="420.30" x2="560.09" y2="428.26"/>
+      <line x1="535.56" y1="436.00" x2="551.15" y2="445.00"/>
+      <line x1="526.16" y1="451.12" x2="541.13" y2="461.12"/>
+      <line x1="515.79" y1="465.58" x2="530.07" y2="476.54"/>
+      <line x1="504.50" y1="479.34" x2="518.03" y2="491.21"/>
+      <line x1="492.33" y1="492.33" x2="505.06" y2="505.06"/>
+      <line x1="479.34" y1="504.50" x2="491.21" y2="518.03"/>
+      <line x1="465.58" y1="515.79" x2="476.54" y2="530.07"/>
+      <line x1="451.12" y1="526.16" x2="461.12" y2="541.13"/>
+      <line x1="436.00" y1="535.56" x2="445.00" y2="551.15"/>
+      <line x1="420.30" y1="543.95" x2="428.26" y2="560.09"/>
+      <line x1="404.09" y1="551.30" x2="410.98" y2="567.93"/>
+      <line x1="387.43" y1="557.56" x2="393.22" y2="574.61"/>
+      <line x1="370.40" y1="562.73" x2="375.06" y2="580.12"/>
+      <line x1="353.06" y1="566.77" x2="356.58" y2="584.43"/>
+      <line x1="335.50" y1="569.67" x2="337.85" y2="587.52"/>
+      <line x1="317.79" y1="571.42" x2="318.97" y2="589.38"/>
+      <line x1="300.00" y1="572.00" x2="300.00" y2="590.00"/>
+      <line x1="282.21" y1="571.42" x2="281.03" y2="589.38"/>
+      <line x1="264.50" y1="569.67" x2="262.15" y2="587.52"/>
+      <line x1="246.94" y1="566.77" x2="243.42" y2="584.43"/>
+      <line x1="229.60" y1="562.73" x2="224.94" y2="580.12"/>
+      <line x1="212.57" y1="557.56" x2="206.78" y2="574.61"/>
+      <line x1="195.91" y1="551.30" x2="189.02" y2="567.93"/>
+      <line x1="179.70" y1="543.95" x2="171.74" y2="560.09"/>
+      <line x1="164.00" y1="535.56" x2="155.00" y2="551.15"/>
+      <line x1="148.88" y1="526.16" x2="138.88" y2="541.13"/>
+      <line x1="134.42" y1="515.79" x2="123.46" y2="530.07"/>
+      <line x1="120.66" y1="504.50" x2="108.79" y2="518.03"/>
+      <line x1="107.67" y1="492.33" x2="94.94" y2="505.06"/>
+      <line x1="95.50" y1="479.34" x2="81.97" y2="491.21"/>
+      <line x1="84.21" y1="465.58" x2="69.93" y2="476.54"/>
+      <line x1="73.84" y1="451.12" x2="58.87" y2="461.12"/>
+      <line x1="64.44" y1="436.00" x2="48.85" y2="445.00"/>
+      <line x1="56.05" y1="420.30" x2="39.91" y2="428.26"/>
+      <line x1="48.70" y1="404.09" x2="32.07" y2="410.98"/>
+      <line x1="42.44" y1="387.43" x2="25.39" y2="393.22"/>
+      <line x1="37.27" y1="370.40" x2="19.88" y2="375.06"/>
+      <line x1="33.23" y1="353.06" x2="15.57" y2="356.58"/>
+      <line x1="30.33" y1="335.50" x2="12.48" y2="337.85"/>
+      <line x1="28.58" y1="317.79" x2="10.62" y2="318.97"/>
+      <line x1="28.00" y1="300.00" x2="10.00" y2="300.00"/>
+      <line x1="28.58" y1="282.21" x2="10.62" y2="281.03"/>
+      <line x1="30.33" y1="264.50" x2="12.48" y2="262.15"/>
+      <line x1="33.23" y1="246.94" x2="15.57" y2="243.42"/>
+      <line x1="37.27" y1="229.60" x2="19.88" y2="224.94"/>
+      <line x1="42.44" y1="212.57" x2="25.39" y2="206.78"/>
+      <line x1="48.70" y1="195.91" x2="32.07" y2="189.02"/>
+      <line x1="56.05" y1="179.70" x2="39.91" y2="171.74"/>
+      <line x1="64.44" y1="164.00" x2="48.85" y2="155.00"/>
+      <line x1="73.84" y1="148.88" x2="58.87" y2="138.88"/>
+      <line x1="84.21" y1="134.42" x2="69.93" y2="123.46"/>
+      <line x1="95.50" y1="120.66" x2="81.97" y2="108.79"/>
+      <line x1="107.67" y1="107.67" x2="94.94" y2="94.94"/>
+      <line x1="120.66" y1="95.50" x2="108.79" y2="81.97"/>
+      <line x1="134.42" y1="84.21" x2="123.46" y2="69.93"/>
+      <line x1="148.88" y1="73.84" x2="138.88" y2="58.87"/>
+      <line x1="164.00" y1="64.44" x2="155.00" y2="48.85"/>
+      <line x1="179.70" y1="56.05" x2="171.74" y2="39.91"/>
+      <line x1="195.91" y1="48.70" x2="189.02" y2="32.07"/>
+      <line x1="212.57" y1="42.44" x2="206.78" y2="25.39"/>
+      <line x1="229.60" y1="37.27" x2="224.94" y2="19.88"/>
+      <line x1="246.94" y1="33.23" x2="243.42" y2="15.57"/>
+      <line x1="264.50" y1="30.33" x2="262.15" y2="12.48"/>
+      <line x1="282.21" y1="28.58" x2="281.03" y2="10.62"/>
+    </g>
+    <circle cx="300" cy="300" r="272" fill="url(#steel)" filter="url(#struck)"/>
+    <circle cx="300" cy="300" r="262" fill="none" stroke="#000" stroke-opacity="0.55" stroke-width="3"/>
+    <circle cx="300" cy="300" r="258" fill="url(#plate)"/>
+    <circle cx="300" cy="300" r="258" fill="#aab0bb" filter="url(#brush)" opacity="0.15"/>
+    <circle cx="300" cy="300" r="258" fill="url(#warm)"/>
+    <circle cx="300" cy="300" r="258" fill="url(#sheen)"/>
+    <circle cx="300" cy="300" r="243" fill="none" stroke="url(#steel)" stroke-width="3.5" stroke-opacity="0.9" filter="url(#struckLite)"/>
+    <circle cx="300" cy="300" r="184" fill="none" stroke="url(#steel)" stroke-width="2.6" stroke-opacity="0.8" filter="url(#struckLite)"/>
+    <circle cx="300" cy="300" r="176" fill="none" stroke="url(#steel)" stroke-width="1.4" stroke-opacity="0.5"/>
+    <g filter="url(#deboss)">
+      <text x="104.50" y="212.96" transform="rotate(-66.00 104.50 212.96)" text-anchor="middle" dominant-baseline="central" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="url(#steelType)">V</text>
+      <text x="132.91" y="166.30" transform="rotate(-51.33 132.91 166.30)" text-anchor="middle" dominant-baseline="central" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="url(#steelType)">E</text>
+      <text x="172.21" y="128.35" transform="rotate(-36.67 172.21 128.35)" text-anchor="middle" dominant-baseline="central" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="url(#steelType)">R</text>
+      <text x="219.83" y="101.58" transform="rotate(-22.00 219.83 101.58)" text-anchor="middle" dominant-baseline="central" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="url(#steelType)">I</text>
+      <text x="272.68" y="87.75" transform="rotate(-7.33 272.68 87.75)" text-anchor="middle" dominant-baseline="central" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="url(#steelType)">F</text>
+      <text x="327.32" y="87.75" transform="rotate(7.33 327.32 87.75)" text-anchor="middle" dominant-baseline="central" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="url(#steelType)">Y</text>
+      <text x="380.17" y="101.58" transform="rotate(22.00 380.17 101.58)" text-anchor="middle" dominant-baseline="central" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="url(#steelType)">M</text>
+      <text x="427.79" y="128.35" transform="rotate(36.67 427.79 128.35)" text-anchor="middle" dominant-baseline="central" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="url(#steelType)">A</text>
+      <text x="467.09" y="166.30" transform="rotate(51.33 467.09 166.30)" text-anchor="middle" dominant-baseline="central" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="url(#steelType)">T</text>
+      <text x="495.50" y="212.96" transform="rotate(66.00 495.50 212.96)" text-anchor="middle" dominant-baseline="central" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="url(#steelType)">E</text>
+    </g>
+    <g filter="url(#deboss)">
+      <text x="467.06" y="430.52" transform="rotate(308.00 467.06 430.52)" text-anchor="middle" dominant-baseline="central" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#d8b25e">S</text>
+      <text x="443.35" y="456.19" transform="rotate(317.45 443.35 456.19)" text-anchor="middle" dominant-baseline="central" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#d8b25e">K</text>
+      <text x="415.75" y="477.61" transform="rotate(326.91 415.75 477.61)" text-anchor="middle" dominant-baseline="central" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#d8b25e">R</text>
+      <text x="385.00" y="494.21" transform="rotate(336.36 385.00 494.21)" text-anchor="middle" dominant-baseline="central" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#d8b25e">O</text>
+      <text x="351.94" y="505.54" transform="rotate(345.82 351.94 505.54)" text-anchor="middle" dominant-baseline="central" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#d8b25e">W</text>
+      <text x="317.47" y="511.28" transform="rotate(355.27 317.47 511.28)" text-anchor="middle" dominant-baseline="central" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#d8b25e"> </text>
+      <text x="282.53" y="511.28" transform="rotate(364.73 282.53 511.28)" text-anchor="middle" dominant-baseline="central" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#d8b25e">R</text>
+      <text x="248.06" y="505.54" transform="rotate(374.18 248.06 505.54)" text-anchor="middle" dominant-baseline="central" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#d8b25e">E</text>
+      <text x="215.00" y="494.21" transform="rotate(383.64 215.00 494.21)" text-anchor="middle" dominant-baseline="central" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#d8b25e">K</text>
+      <text x="184.25" y="477.61" transform="rotate(393.09 184.25 477.61)" text-anchor="middle" dominant-baseline="central" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#d8b25e">L</text>
+      <text x="156.65" y="456.19" transform="rotate(402.55 156.65 456.19)" text-anchor="middle" dominant-baseline="central" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#d8b25e">A</text>
+      <text x="132.94" y="430.52" transform="rotate(412.00 132.94 430.52)" text-anchor="middle" dominant-baseline="central" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#d8b25e">W</text>
+    </g>
+    <g filter="url(#accGlow)">
+      <rect x="506" y="292" width="16" height="16" transform="rotate(45 514 300)" fill="url(#gold)"/>
+      <rect x="78" y="292" width="16" height="16" transform="rotate(45 86 300)" fill="url(#gold)"/>
+    </g>
+    <circle cx="300" cy="300" r="172" fill="#0d1016" opacity="0.55"/>
+    <circle cx="300" cy="296" r="112" fill="url(#warm)"/>
+    <g filter="url(#struckLite)">
+      <polygon points="300,164 418,232 418,368 300,436 182,368 182,232" fill="none" stroke="url(#steel)" stroke-width="8.5" stroke-linejoin="round"/>
+      <polygon points="300,192 394,246 394,354 300,408 206,354 206,246" fill="none" stroke="url(#steel)" stroke-width="2.6" stroke-opacity="0.6" stroke-linejoin="round"/>
+    </g>
+    <g filter="url(#struckLite)">
+    <path d="M 246 298 L 288 344 L 366 240" fill="none" stroke="url(#steel)" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 246 298 L 288 344 L 366 240" fill="none" stroke="url(#gold)" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+    <g filter="url(#accGlow)">
+      <circle cx="246" cy="298" r="11.5" fill="url(#gold)"/><circle cx="288" cy="344" r="13" fill="url(#gold)"/><circle cx="366" cy="240" r="14" fill="url(#gold)"/>
+    </g>
+    </g>
+  </g>
+</svg>
