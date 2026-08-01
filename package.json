@@ -6,8 +6,8 @@
     "dev": "node server.js"
   },
   "dependencies": {
-    "@sparticuz/chromium": "^123.0.0",
-    "puppeteer-core": "^22.0.0"
+    "@sparticuz/chromium": "^143.0.4",
+    "puppeteer-core": "^25.4.0"
   },
   "devDependencies": {
     "playwright": "^1.62.1"
