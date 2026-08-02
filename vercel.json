@@ -1,4 +1,4 @@
 {
-  "functions": { "api/verify.js": { "maxDuration": 60, "memory": 1024 } },
+  "functions": { "api/verify.js": { "maxDuration": 300, "memory": 1024 } },
   "rewrites": [{ "source": "/", "destination": "/index.html" }]
 }
