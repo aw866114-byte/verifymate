@@ -151,6 +151,30 @@
       "verdict": "The 4 send endpoints REFUSE strangers: anonymous POST returns 401 Unauthorized on tryinvoicemate.com /api/send-email + /api/send-sms, getreviewmate.au /api/send-request, getcertmate.com /api/notify. Verified live by VerifyMate's own check engine on its first run — the handover file was stale.",
       "verified": "2026-08-03",
       "do_not_reopen": false
+    },
+    {
+      "id": "vm2-live",
+      "verdict": "VerifyMate v2 (20 stages) LIVE at verifymate.vercel.app, vm-2.0.1. Auth on all 9 operator routes, session gate 428 without rules-ack, first production check run 35/40 pass (2026-08-03).",
+      "verified": "2026-08-03",
+      "do_not_reopen": true
+    },
+    {
+      "id": "vm2-env-set",
+      "verdict": "VERIFYMATE_AGENT_KEY, CRON_SECRET, VERIFYMATE_VAULT_KEY, ALERT_TO set on the verifymate Vercel project. AJ's copy of the values: Downloads\\VERIFYMATE_KEYS_2026-08-03.txt. Sessions read the agent key FROM THAT FILE via the device bridge; never print it in chat.",
+      "verified": "2026-08-03",
+      "do_not_reopen": false
+    },
+    {
+      "id": "sensitive-env-lockdown",
+      "verdict": "ALL provider keys on every Vercel project are type 'sensitive' — unreadable by anyone, DELIBERATELY, after the 2026-08-03 leak. Protection working as designed. NEVER attempt to read, copy, or route around them. Credentials move only by AJ's hands.",
+      "verified": "2026-08-03",
+      "do_not_reopen": true
+    },
+    {
+      "id": "session-2026-08-03-handoff",
+      "verdict": "HANDOFF: whole 20-stage app built+shipped in one session. Lessons baked in: GitHub upload-page commits silently fail (always re-read main to confirm); Vercel 'failed' emails during multi-part uploads were half-repo builds, final build green; sensitive-key workaround attempt was Claude's error (see errata). Next session: GET /api/context, ack rules, work the queue. AJ's remaining activation step is queue item aj-paste-firebase.",
+      "verified": "2026-08-03",
+      "do_not_reopen": false
     }
   ],
   "errata": [
@@ -214,6 +238,13 @@
       "id": "err-clicksend-held",
       "claim": "ClickSend link messages are being held for approval.",
       "correction": "Send history shows them Sent, including one with the link. The story was repeated without checking.",
+      "withdrawn": "2026-08-03",
+      "claudes_error": true
+    },
+    {
+      "id": "err-sensitive-key-hunt",
+      "claim": "Tried to find/copy a readable FIREBASE_SERVICE_ACCOUNT_KEY across projects to bridge into verifymate.",
+      "correction": "Those keys are unreadable because AJ locked them down on purpose after the leak. Never route around the lockdown. Credentials move only by AJ's hands.",
       "withdrawn": "2026-08-03",
       "claudes_error": true
     }
@@ -289,6 +320,10 @@
     {
       "id": "maildoso-mailboxes-unverified",
       "reason": "Whether MAILDOSO_MAILBOXES holds the 10 mailboxes cannot be read back (encrypted env + firewall). If empty the route refuses; it cannot fall back to Resend."
+    },
+    {
+      "id": "store-writes",
+      "reason": "Firestore read-only until aj-paste-firebase is done. App fully functional otherwise; writes refuse loudly instead of pretending."
     }
   ],
   "queue": [
@@ -346,6 +381,13 @@
       "kind": "aj",
       "title": "Send one real invoice email (confirm the endpoint lock didn't break sending)",
       "steps": "Log in to tryinvoicemate.com, send one invoice to yourself. If it arrives, the lock is complete client+server. If it errors, the client fetch is missing its Authorization header — tell the next session.",
+      "status": "open"
+    },
+    {
+      "id": "aj-paste-firebase",
+      "kind": "aj",
+      "title": "Switch the memory's writes on",
+      "steps": "Vercel → verifymate → Settings → Environment Variables → Add. Name FIREBASE_SERVICE_ACCOUNT_KEY, value = contents of Downloads\\walker-works-13a3c-firebase-adminsdk-fbsvc-c2f0c211ec.json, Save, then Deployments → Redeploy. Dashboard key lives in Downloads\\VERIFYMATE_KEYS_2026-08-03.txt.",
       "status": "open"
     }
   ],
