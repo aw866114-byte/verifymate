@@ -113,7 +113,17 @@ const api = async (path, opts = {}) => {
 };
 const esc = (s) => String(s ?? '').replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 
-function saveKey(){ KEY = $('keyIn').value.trim(); if(!KEY) return; localStorage.setItem('vm_agent_key', KEY); boot(); }
+async function saveKey(){
+  const v = $('keyIn').value.trim(); if(!v) return;
+  const r = await fetch('/api/context', { headers: { 'Authorization': 'Bearer ' + v } });
+  if (r.status !== 200) {
+    $('gateErr').textContent = v.length === 64 ? 'That\u2019s the VAULT key (bottom line of your keys file). Paste the TOP line \u2014 under \u201cVERIFYMATE_AGENT_KEY\u201d.'
+      : v.length > 100 ? 'That\u2019s a whole file. Paste only the TOP key line \u2014 under \u201cVERIFYMATE_AGENT_KEY\u201d.'
+      : 'Not the agent key. Paste the TOP line of your keys file \u2014 under \u201cVERIFYMATE_AGENT_KEY\u201d.';
+    $('keyIn').value = ''; return;
+  }
+  KEY = v; localStorage.setItem('vm_agent_key', KEY); boot();
+}
 function logout(){ localStorage.removeItem('vm_agent_key'); KEY=''; $('app').classList.add('hide'); $('gate').classList.remove('hide'); }
 
 async function boot(){
