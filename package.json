@@ -3,13 +3,18 @@
   "version": "1.0.0",
   "description": "VerifyMate — does your app actually work? Active functional + deliverability verification.",
   "scripts": {
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "test": "node test/run-tests.js",
+    "typecheck": "npx tsc -p tsconfig.json"
   },
   "dependencies": {
     "@sparticuz/chromium": "^143.0.4",
+    "firebase-admin": "^13.0.0",
     "puppeteer-core": "^25.4.0"
   },
   "devDependencies": {
-    "playwright": "^1.62.1"
+    "@types/node": "^26.1.2",
+    "playwright": "^1.62.1",
+    "typescript": "^7.0.2"
   }
 }

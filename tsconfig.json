@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "target": "ES2022",
+    "module": "commonjs",
+    "resolveJsonModule": true,
+    "strict": false,
+    "skipLibCheck": true,
+    "lib": ["ES2022", "DOM"]
+  },
+  "include": [
+    "lib/auth.js", "lib/store.js", "lib/checks.js", "lib/alert.js", "lib/vault.js",
+    "lib/guard.js", "lib/version.js", "lib/adapters/stripe.js",
+    "api/context.js", "api/verdict.js", "api/session.js", "api/checks.js",
+    "api/vault.js", "api/actions.js", "api/money.js", "api/guard.js",
+    "api/cron/run-checks.js", "api/cron/digest.js"
+  ]
+}

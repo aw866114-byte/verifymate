@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerifyMate — Operations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f5f1ea;--paper-deep:#ece6da;--ink:#1f2226;--ink-soft:#3a3f47;--ink-muted:#6c7079;--copper:#b8642e;--hair:rgba(31,34,38,.12);--green:#2f7d52;--red:#b03030;--amber:#b8862e;--serif:'Lora',Georgia,serif;--sans:'Inter',sans-serif;--mono:'JetBrains Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px 80px}
+header{padding:34px 0 20px;border-bottom:1px solid var(--hair);display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+h1{font-family:var(--serif);font-size:1.9rem}
+h1 em{font-style:italic;color:var(--copper)}
+.ver{font-family:var(--mono);font-size:.68rem;color:var(--ink-muted);margin-left:auto}
+h2{font-family:var(--serif);font-size:1.2rem;margin:30px 0 10px}
+.mono{font-family:var(--mono)}
+.pill{font-family:var(--mono);font-size:.66rem;padding:2px 9px;border-radius:99px;letter-spacing:.06em}
+.ok{background:rgba(47,125,82,.13);color:var(--green)}.bad{background:rgba(176,48,48,.13);color:var(--red)}.warn{background:rgba(184,134,46,.16);color:var(--amber)}
+.card{background:#fff;border:1px solid var(--hair);border-radius:6px;padding:15px 17px;margin-bottom:10px}
+.row{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-top:1px solid var(--hair);font-size:.88rem}
+.row:first-child{border-top:0}
+.row .ev{font-family:var(--mono);font-size:.7rem;color:var(--ink-muted)}
+.pip{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.pg{background:var(--green)}.pr{background:var(--red)}.pa{background:var(--amber)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:10px}
+.mod{background:var(--paper-deep);border:1px solid var(--hair);border-radius:6px;padding:12px 14px}
+.mod b{font-size:.9rem}
+.mod .n{font-family:var(--mono);font-size:.66rem;color:var(--copper);letter-spacing:.14em}
+button{font-family:var(--sans);font-weight:600;font-size:.84rem;padding:8px 16px;border-radius:4px;border:1px solid var(--hair);background:#fff;cursor:pointer}
+button.go{background:var(--green);color:#fff;border-color:var(--green)}
+button.no{color:var(--red);border-color:rgba(176,48,48,.4)}
+input,textarea{font-family:var(--mono);font-size:.8rem;padding:9px 11px;border:1px solid var(--hair);border-radius:4px;background:#fff;width:100%}
+label{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-muted);display:block;margin:9px 0 4px}
+.diff{font-family:var(--mono);font-size:.74rem;background:#fbf9f5;border:1px solid var(--hair);border-radius:4px;padding:10px;white-space:pre-wrap;margin:8px 0}
+.note{font-size:.8rem;color:var(--ink-muted);font-style:italic}
+#gate{max-width:440px;margin:80px auto;text-align:center}
+.hide{display:none}
+.flex{display:flex;gap:8px;align-items:center}
+.err{color:var(--red);font-size:.82rem}
+</style>
+</head>
+<body>
+
+<div id="gate" class="wrap">
+  <h1 style="margin-bottom:6px">VerifyMate <em>Operations</em></h1>
+  <p class="note" style="margin-bottom:18px">Paste the agent key. It stays in this browser.</p>
+  <input id="keyIn" type="password" placeholder="VERIFYMATE_AGENT_KEY" style="margin-bottom:10px">
+  <button class="go" onclick="saveKey()">Open</button>
+  <p id="gateErr" class="err" style="margin-top:10px"></p>
+</div>
+
+<div id="app" class="wrap hide">
+  <header>
+    <h1>VerifyMate <em>Operations</em></h1>
+    <span id="summary" class="pill">loading…</span>
+    <span class="ver" id="ver"></span>
+  </header>
+
+  <div id="storeWarn"></div>
+
+  <h2>The nine screens in one glance</h2>
+  <div class="grid" id="modules"></div>
+
+  <h2>Approvals — waiting on you</h2>
+  <div id="approvals"><p class="note">None.</p></div>
+
+  <h2 style="color:var(--red)">Failing</h2>
+  <div class="card" id="failing"></div>
+
+  <h2 style="color:var(--copper)">Only you can do these</h2>
+  <div class="card" id="ajq"></div>
+
+  <h2>Due — clocks &amp; follow-ups</h2>
+  <div class="card" id="due"></div>
+
+  <h2>Money</h2>
+  <div class="card" id="money"><p class="note">No Stripe key in the vault yet.</p></div>
+
+  <h2>Vault <span class="pill">write-only</span></h2>
+  <div class="card">
+    <p class="note">Paste a key once; it is encrypted and can never be read back out — not by the dashboard, not by the API, not by an agent.</p>
+    <label>Name</label><input id="sName" placeholder="stripe_restricted">
+    <label>Value</label><input id="sVal" type="password" placeholder="rk_live_…">
+    <label>Note</label><input id="sNote" placeholder="restricted: links+products+prices write, charges read">
+    <div class="flex" style="margin-top:10px">
+      <button class="go" onclick="putSecret()">Store</button>
+      <span id="sMsg" class="note"></span>
+    </div>
+    <div id="sList" style="margin-top:10px"></div>
+    <hr style="border:0;border-top:1px solid var(--hair);margin:14px 0">
+    <p class="note">Need a vault key? Generated here in your browser — set it in Vercel as <span class="mono">VERIFYMATE_VAULT_KEY</span>, never send it to anyone.</p>
+    <div class="flex" style="margin-top:8px"><button onclick="genVaultKey()">Generate vault key</button><span id="vk" class="mono" style="font-size:.7rem;word-break:break-all"></span></div>
+  </div>
+
+  <h2>Last handoff</h2>
+  <div class="card"><pre id="handoff" class="mono" style="font-size:.74rem;white-space:pre-wrap">—</pre></div>
+
+  <p class="note" style="margin-top:24px">Checks run daily by cron; <a href="#" onclick="runChecks();return false">run them now</a>. · <a href="#" onclick="logout();return false">Lock</a></p>
+</div>
+
+<script>
+let KEY = localStorage.getItem('vm_agent_key') || '';
+const $ = (id) => document.getElementById(id);
+const api = async (path, opts = {}) => {
+  const r = await fetch(path, { ...opts, headers: { 'Authorization': 'Bearer ' + KEY, 'Content-Type': 'application/json', ...(opts.headers || {}) } });
+  const j = await r.json().catch(() => ({}));
+  if (r.status === 401) { logout(); throw new Error('key rejected'); }
+  return { status: r.status, ...j };
+};
+const esc = (s) => String(s ?? '').replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+function saveKey(){ KEY = $('keyIn').value.trim(); if(!KEY) return; localStorage.setItem('vm_agent_key', KEY); boot(); }
+function logout(){ localStorage.removeItem('vm_agent_key'); KEY=''; $('app').classList.add('hide'); $('gate').classList.remove('hide'); }
+
+async function boot(){
+  try {
+    const ctx = await api('/api/context');
+    if (!ctx.ok) { $('gateErr').textContent = ctx.error || 'failed'; return; }
+    $('gate').classList.add('hide'); $('app').classList.remove('hide');
+    render(ctx);
+    loadMoney(); loadSecrets();
+  } catch(e){ $('gateErr').textContent = String(e.message || e); }
+}
+
+function render(ctx){
+  $('ver').textContent = ctx.appVersion || '';
+  const c = ctx.checks;
+  $('summary').className = 'pill ' + (c ? (c.fail ? 'bad' : 'ok') : 'warn');
+  $('summary').textContent = c ? `${c.pass}/${c.total} checks passing` : 'no check run yet';
+  $('storeWarn').innerHTML = ctx.readOnly ? '<div class="card" style="border-color:var(--amber)"><b>Store is read-only.</b> <span class="note">FIREBASE_SERVICE_ACCOUNT_KEY missing — copy it from the walker-works Vercel project so the app can remember. Until then this shows the committed seed.</span></div>' : '';
+
+  const mods = ['state','domains','sites','apps','checkout','outreach','leads','money','act'];
+  const by = (c && c.byModule) || {};
+  $('modules').innerHTML = mods.map((m,i)=>{
+    const s = by[m]; const cls = !s ? '' : s.fail ? 'bad' : 'ok';
+    return `<div class="mod"><div class="n">${String(i+1).padStart(2,'0')} — ${m.toUpperCase()}</div><b>${s?`${s.pass} pass${s.fail?` · <span style="color:var(--red)">${s.fail} fail</span>`:''}`:'no live checks yet'}</b></div>`;
+  }).join('');
+
+  $('failing').innerHTML = (ctx.failing||[]).length ? ctx.failing.map(f=>`<div class="row"><span class="pip pr"></span><div><b>${esc(f.id)}</b> — ${esc(f.impact||'')}<div class="ev">${esc(f.evidence||'')}</div></div></div>`).join('') : '<p class="note">Nothing failing. Suspicious — run the checks.</p>';
+
+  const aj = (ctx.queue||[]).filter(q=>q.kind==='aj'&&q.status==='open');
+  $('ajq').innerHTML = aj.length ? aj.map(q=>`<div class="row"><span class="pip pa"></span><div><b>${esc(q.title)}</b><div class="ev">${esc(q.steps||'')}</div></div></div>`).join('') : '<p class="note">Nothing waiting on you.</p>';
+
+  const due = [...(ctx.dueClocks||[]).map(x=>({t:x.what,d:x.action})),...(ctx.dueFollowups||[]).map(x=>({t:x.who+': '+x.about,d:x.next}))];
+  $('due').innerHTML = due.length ? due.map(x=>`<div class="row"><span class="pip pa"></span><div><b>${esc(x.t)}</b><div class="ev">${esc(x.d||'')}</div></div></div>`).join('') : '<p class="note">Nothing due today.</p>';
+
+  const ap = ctx.pendingApprovals||[];
+  $('approvals').innerHTML = ap.length ? ap.map(a=>`<div class="card" style="border:2px solid var(--copper)">
+    <b>${esc(a.type)}</b> — ${esc(a.why||'')}<div class="diff">${(a.diff||[]).map(esc).join('\n')}</div>
+    <div class="note">${esc(a.detail||'')} · blast radius: ${esc(a.blastRadius||'?')} · reversible: ${a.rollback?'yes':'NO'}</div>
+    <div class="flex" style="margin-top:10px"><button class="go" onclick="decide('${a.id}','approve')">Approve &amp; execute</button><button class="no" onclick="decide('${a.id}','decline')">Decline</button></div>
+  </div>`).join('') : '<p class="note">None.</p>';
+
+  $('handoff').textContent = ctx.lastHandoff ? (typeof ctx.lastHandoff.state==='string'?ctx.lastHandoff.state:JSON.stringify(ctx.lastHandoff.state,null,2)) : 'No handoff stored yet.';
+}
+
+async function decide(id, what){ const r = await api('/api/actions',{method:'POST',body:JSON.stringify({do:what,id})}); alert(r.ok?`${what}d.${r.result?' '+(r.result.evidence||''):''}`:r.error); boot(); }
+async function runChecks(){ $('summary').textContent='running…'; const r = await api('/api/cron/run-checks',{method:'POST'}); if(r.ok){await boot();} else alert(r.error||'failed'); }
+async function loadMoney(){ const m = await api('/api/money'); $('money').innerHTML = m.ok ? `<b>${esc(m.summary)}</b>` + (m.latest&&m.latest.length?m.latest.map(x=>`<div class="row"><div><b>${esc(x.amount)} ${esc(x.currency)}</b> · ${esc(x.when)} <span class="ev">${esc(x.desc)}</span></div></div>`).join(''):'') : `<p class="note">${esc(m.fix||m.error||'')}</p>`; }
+async function loadSecrets(){ const s = await api('/api/vault'); if(s.ok) $('sList').innerHTML = (s.secrets||[]).map(x=>`<div class="row"><span class="pip pg"></span><div class="mono" style="font-size:.74rem"><b>${esc(x.name)}</b> · ${x.length} chars · sha ${esc(x.sha8||'')} <span class="ev">${esc(x.note||'')}</span></div></div>`).join('') || '<p class="note">Vault is empty.</p>'; }
+async function putSecret(){ const name=$('sName').value.trim(), value=$('sVal').value; if(!name||!value){$('sMsg').textContent='name + value required';return;}
+  const r = await api('/api/vault',{method:'POST',body:JSON.stringify({name,value,note:$('sNote').value.trim()})});
+  $('sMsg').textContent = r.ok?`stored (${r.length} chars). The value is now unreadable.`:(r.error||'failed');
+  if(r.ok){$('sVal').value='';loadSecrets();} }
+function genVaultKey(){ const b=new Uint8Array(32); crypto.getRandomValues(b); $('vk').textContent=[...b].map(x=>x.toString(16).padStart(2,'0')).join(''); }
+
+if (KEY) boot();
+</script>
+</body>
+</html>
