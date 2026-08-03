@@ -1,0 +1,467 @@
+{
+  "seedVersion": "2026-08-03",
+  "note": "Committed baseline seeded from _READ_FIRST_CLAUDE.md + _HANDOVER_STATE.md (2026-08-03). The store overlays live verdicts on top; a live doc with the same id wins. A failing check is the only thing that reopens a settled fact.",
+  "rules": [
+    {
+      "id": "rule-zero",
+      "text": "Check before you speak. Never state a fact not verified in the last few minutes or read from a stored verdict with evidence and a date."
+    },
+    {
+      "id": "claude-capabilities",
+      "text": "Claude DOES do passwords, account creation, Etsy, Stripe, Vercel, GitHub, Resend and Maildoso — through AJ's browser with his click-approval, and has for weeks (AJ, 2026-08-03). This supersedes every older 'Claude cannot' list. Secrets still never appear in chat: they go through the vault."
+    },
+    {
+      "id": "name-rule",
+      "text": "AJ Walker or Andy — never Andrew Walker. andrew@ mailboxes/URLs are addresses, not names; leave them."
+    },
+    {
+      "id": "cold-email-maildoso",
+      "text": "Cold outreach = Maildoso only. Resend is transactional/opt-in only, shared by all seven apps; cold through it risks paid-customer mail. Never propose alternatives."
+    },
+    {
+      "id": "credential-gate",
+      "text": "AJ is the builder/operator, never the practitioner or expert. No field-experience claims, anywhere, ever."
+    },
+    {
+      "id": "claudes-errors-are-claudes",
+      "text": "When advice was wrong, name it as Claude's error. Never phrase a reversal as AJ's mistake — he executes what he's told."
+    },
+    {
+      "id": "ship-what-exists",
+      "text": "Before building anything, check the inventory (stage 12). The measured 90-day pattern is prepared-but-never-fired. Do not build kit #2 while kit #1 sits unshipped."
+    },
+    {
+      "id": "whole-deploys",
+      "text": "Deploy whole sites/repos, never partial. Preview before promote. Rollback recorded before an action runs."
+    },
+    {
+      "id": "done-means-proven",
+      "text": "'Done' only exists with a passing check and stored evidence. Otherwise the sentence is: checked X of Y, have not opened Z."
+    },
+    {
+      "id": "short-messages",
+      "text": "AJ is heavily overloaded. Answer the question asked, in one or two lines. Long explanations actively confuse."
+    }
+  ],
+  "settled": [
+    {
+      "id": "cold-email-maildoso",
+      "verdict": "Cold outreach runs on Maildoso. Decided by AJ. Resend never carries cold.",
+      "verified": "2026-08-03",
+      "do_not_reopen": true
+    },
+    {
+      "id": "leadmate-crons",
+      "verdict": "3 crons live (outreach apps 21:00, tpc 21:30, followups 22:00 UTC), CRON_SECRET enforced.",
+      "verified": "2026-08-03",
+      "do_not_reopen": true
+    },
+    {
+      "id": "leadmate-outreach-route",
+      "verdict": "send-outreach rewritten: Maildoso only, Resend removed from the path, warmup + budget caps enforced fail-closed, kill switch OUTREACH_ENABLED=true set 08:22. Route sha256 ed1f4fab…, build READY.",
+      "verified": "2026-08-03",
+      "do_not_reopen": true
+    },
+    {
+      "id": "allcare-geofence",
+      "verdict": "35 km hard fence from Port Macquarie (-31.4333, 152.9089) enforced in /api/discover; brand-query test dropped 18/20 out-of-area results.",
+      "verified": "2026-08-03",
+      "do_not_reopen": true
+    },
+    {
+      "id": "allcare-email-routing",
+      "verdict": "Cloudflare routing enabled+ready, destination verified, catch-all active. The 1 Aug mail was the verification mail itself.",
+      "verified": "2026-08-03",
+      "do_not_reopen": true
+    },
+    {
+      "id": "icann-verification",
+      "verdict": "No ICANN verification email exists for the 3 Maildoso domains; registrar of record is Dominet (HK). Nothing to click.",
+      "verified": "2026-08-03",
+      "do_not_reopen": true
+    },
+    {
+      "id": "reply-bounce-audit",
+      "verdict": "All 10 outreach From: addresses route to a real inbox (named hello@ forwards; Porkbun has no catch-all).",
+      "verified": "2026-08-03",
+      "do_not_reopen": true
+    },
+    {
+      "id": "bot-fight-mode-tpc",
+      "verdict": "OFF on theprotocolcollective.com, on evidence: it stopped VerifyMate, not scrapers (plain curl got all 94 Stripe links through it). If scraping ever needs stopping, the tool is a rate limit.",
+      "verified": "2026-08-03",
+      "do_not_reopen": true
+    },
+    {
+      "id": "compliance-cadence-two-links",
+      "verdict": "Two Stripe links by design: Founders $297/yr, Standard $497/yr.",
+      "verified": "2026-08-01",
+      "do_not_reopen": true
+    },
+    {
+      "id": "roi-calculator-free",
+      "verdict": "Free funnel. No buy button, ever.",
+      "verified": "2026-08-01",
+      "do_not_reopen": true
+    },
+    {
+      "id": "orders-fulfillment-complete",
+      "verdict": "100 folders / 330 files, mirrored byte-for-byte. Single-file dashboards ARE the deliverable; Tier 8 charters ARE the product.",
+      "verified": "2026-08-01",
+      "do_not_reopen": true
+    },
+    {
+      "id": "timothy-charlton",
+      "verdict": "Scammer (third-party payment push). Handled correctly; Trash = a decision, not a lost lead.",
+      "verified": "2026-06-30",
+      "do_not_reopen": true
+    },
+    {
+      "id": "tpc-fintech-bundle-404",
+      "verdict": "fintech-compliance-bundle.html 404s but zero pages link to it; the card goes straight to Stripe. Tidiness, not lost revenue.",
+      "verified": "2026-08-03",
+      "do_not_reopen": true
+    },
+    {
+      "id": "verifymate-custom-domain",
+      "verdict": "AJ does not want a custom domain right now. Do not raise it.",
+      "verified": "2026-08-03",
+      "do_not_reopen": true
+    },
+    {
+      "id": "formsubmit-walkerworks",
+      "verdict": "Contact form activated 2026-08-03; two test submissions delivered to aj@walkerworks.co.",
+      "verified": "2026-08-03",
+      "do_not_reopen": true
+    },
+    {
+      "id": "etsy-state",
+      "verdict": "21 active listings, all with video; first sale 31 Jul (Decision Journal ~$27). Etsy+Pinterest for TPC consumer masteries = tested dead 3x — conversion, not visibility.",
+      "verified": "2026-08-02",
+      "do_not_reopen": true
+    },
+    {
+      "id": "verifymate-in-this-repo",
+      "verdict": "VerifyMate absorbs the ops layer — one app, this repo, Vercel. No second product.",
+      "verified": "2026-08-03",
+      "do_not_reopen": true
+    },
+    {
+      "id": "send-endpoints-locked",
+      "verdict": "The 4 send endpoints REFUSE strangers: anonymous POST returns 401 Unauthorized on tryinvoicemate.com /api/send-email + /api/send-sms, getreviewmate.au /api/send-request, getcertmate.com /api/notify. Verified live by VerifyMate's own check engine on its first run — the handover file was stale.",
+      "verified": "2026-08-03",
+      "do_not_reopen": false
+    }
+  ],
+  "errata": [
+    {
+      "id": "err-resend-cold",
+      "claim": "Build the cold engine on Resend.",
+      "correction": "Resend is transactional-only; cold breaches its AUP. Maildoso carries cold on throwaway domains.",
+      "withdrawn": "2026-08-03",
+      "claudes_error": true
+    },
+    {
+      "id": "err-icann-email",
+      "claim": "AJ must click an ICANN verification email or the 3 new domains suspend in ~15 days.",
+      "correction": "No such email exists or is coming — Dominet (HK) is the registrant of record, RDAP shows no holds.",
+      "withdrawn": "2026-08-03",
+      "claudes_error": true
+    },
+    {
+      "id": "err-mailbox-count",
+      "claim": "The Maildoso plan is 12 mailboxes.",
+      "correction": "It is 10 (4/3/3), stated without checking.",
+      "withdrawn": "2026-08-03",
+      "claudes_error": true
+    },
+    {
+      "id": "err-warmup-ban",
+      "claim": "No sending for two weeks on the new domains.",
+      "correction": "Warmup is automatic; 'score in 14 days' is visibility, not a ban. Start ~5/mailbox/day ~3-4 days out, ramp 10→15→25→40.",
+      "withdrawn": "2026-08-03",
+      "claudes_error": true
+    },
+    {
+      "id": "err-apps-no-checkout",
+      "claim": "None of the six apps has a checkout; they cannot take money.",
+      "correction": "They use server-created Stripe Checkout Sessions (POST /api/checkout, live on 5 domains). Claude had only grepped for buy.stripe.com hrefs.",
+      "withdrawn": "2026-08-03",
+      "claudes_error": true
+    },
+    {
+      "id": "err-bot-fight-mode",
+      "claim": "Turn Bot Fight Mode on for TPC (and: the audit log shows nobody enabled it).",
+      "correction": "It blocked VerifyMate, not scrapers; Cloudflare doesn't log BFM toggles at all so 'no record' meant nothing. Off on evidence.",
+      "withdrawn": "2026-08-03",
+      "claudes_error": true
+    },
+    {
+      "id": "err-only-way-channels",
+      "claim": "Cold calling is the only way to sell web builds; LinkedIn the only way to sell TPC.",
+      "correction": "Six live routes with evidence. Never say 'the only way' about a channel.",
+      "withdrawn": "2026-08-02",
+      "claudes_error": true
+    },
+    {
+      "id": "err-geofence-inert",
+      "claim": "The All Care geo fence was inert (no campaign supplied near/radiusKm).",
+      "correction": "allcare.ts carries near+radiusKm; Claude had grepped one file and never opened the module it imports.",
+      "withdrawn": "2026-08-03",
+      "claudes_error": true
+    },
+    {
+      "id": "err-clicksend-held",
+      "claim": "ClickSend link messages are being held for approval.",
+      "correction": "Send history shows them Sent, including one with the link. The story was repeated without checking.",
+      "withdrawn": "2026-08-03",
+      "claudes_error": true
+    }
+  ],
+  "failing": [
+    {
+      "id": "discover-endpoint-open",
+      "module": "outreach",
+      "since": "2026-08-03",
+      "evidence": "leadmate /api/discover has no auth and spends GOOGLE_PLACES_API_KEY.",
+      "impact": "Quota burn by anyone who finds it."
+    },
+    {
+      "id": "rotate-leaked-keys",
+      "module": "act",
+      "since": "2026-08-03",
+      "evidence": "Twilio auth token + Resend key 'Apps notify 2026-08' rendered unmasked into the chat transcript (57 occurrences).",
+      "impact": "Live credentials in a transcript. Rotate both; then they live only in the vault."
+    },
+    {
+      "id": "tpc-v64-undeployed",
+      "module": "sites",
+      "since": "2026-08-03",
+      "evidence": "TPC-DEPLOY-2026-08-03-v64.zip built (BNPL repoint + Exam-Readiness rebuild). Live is v63: the BNPL card still opens the Securities toolkit.",
+      "impact": "BNPL buyers receive the wrong product until deployed."
+    },
+    {
+      "id": "walkerworks-0805-undeployed",
+      "module": "sites",
+      "since": "2026-08-03",
+      "evidence": "walkerworks-co-2026-08-05.zip adds thanks.html; live form still 404s after submit.",
+      "impact": "Every enquirer sees a 404 after submitting."
+    },
+    {
+      "id": "invoicemate-no-stripe-product",
+      "module": "checkout",
+      "since": "2026-08-03",
+      "evidence": "tryinvoicemate.com advertises $39/mo; no Stripe product exists.",
+      "impact": "Buy now cannot be wired until the product is created."
+    },
+    {
+      "id": "register-copy-wrong-brand",
+      "module": "apps",
+      "since": "2026-08-03",
+      "evidence": "CertMate, InspectMate, ShiftSafe register pages say 'Create your ReviewMate account'.",
+      "impact": "Wrong brand on the page a buyer sees right after Buy now. One-line fix each."
+    },
+    {
+      "id": "clicksend-vars-stale",
+      "module": "act",
+      "since": "2026-08-03",
+      "evidence": "CLICKSEND_USERNAME/API_KEY still on reviewmate; nothing reads them.",
+      "impact": "Accidental rewire risk. Delete them."
+    },
+    {
+      "id": "trademark-mastery-orphan",
+      "module": "checkout",
+      "since": "2026-08-03",
+      "evidence": "Active $397 Stripe link; no page, no card, 1,554 words. AJ's decision: bundle or deactivate.",
+      "impact": "None until decided — orphan, not a leak."
+    }
+  ],
+  "blocked": [
+    {
+      "id": "outreach-warmup",
+      "reason": "meetcascadegroup.com / trybrightwaterpartners.com / trynorthfielddesk.com registered 2026-08-03. Start ~5/mailbox/day from ~2026-08-06, ramp 10→15→25→40. WARMUP_DAILY_CAP=5 at launch.",
+      "earliest": "2026-08-06"
+    },
+    {
+      "id": "vercel-chrome-permission",
+      "reason": "Chrome extension has no permission for vercel.com; AJ must allow it before the agent can drive Vercel settings."
+    },
+    {
+      "id": "maildoso-mailboxes-unverified",
+      "reason": "Whether MAILDOSO_MAILBOXES holds the 10 mailboxes cannot be read back (encrypted env + firewall). If empty the route refuses; it cannot fall back to Resend."
+    }
+  ],
+  "queue": [
+    {
+      "id": "aj-deploy-tpc-v64",
+      "kind": "aj",
+      "title": "Deploy TPC v64",
+      "steps": "Cloudflare Pages → theprotocolcollective.com → upload Downloads\\TPC-DEPLOY-2026-08-03-v64.zip (whole site). Fixes the BNPL wrong-product checkout.",
+      "status": "open"
+    },
+    {
+      "id": "aj-deploy-ww-0805",
+      "kind": "aj",
+      "title": "Deploy walkerworks-co-2026-08-05.zip",
+      "steps": "Cloudflare Pages → walkerworks.co → upload the 08-05 zip (whole site). Adds thanks.html so the form stops 404ing.",
+      "status": "open"
+    },
+    {
+      "id": "aj-rotate-keys",
+      "kind": "aj",
+      "title": "Rotate Twilio token + Resend key",
+      "steps": "Twilio: API keys → Request secondary token, swap, revoke primary. Resend: create replacement key, update Vercel env on reviewmate/inspectmate/shiftsafe, delete 'Apps notify 2026-08'. Both leaked into a transcript 2026-08-03.",
+      "status": "open"
+    },
+    {
+      "id": "aj-vercel-chrome",
+      "kind": "aj",
+      "title": "Allow vercel.com in the Chrome extension",
+      "steps": "Claude extension → site permissions → add vercel.com. Unblocks agent-driven env setup.",
+      "status": "open"
+    },
+    {
+      "id": "aj-test-buy-flow",
+      "kind": "aj",
+      "title": "Run one real Buy now purchase",
+      "steps": "/register?buy=1 on getreviewmate.au with a real card, refund after. The signup→Stripe hop is code-reviewed, never exercised.",
+      "status": "open"
+    },
+    {
+      "id": "work-fix-register-copy",
+      "kind": "work",
+      "title": "Fix ReviewMate copy on 3 register pages",
+      "steps": "certmate/inspectmate/shiftsafe app/register/page.tsx — brand name, one line each.",
+      "status": "open"
+    },
+    {
+      "id": "work-invoicemate-product",
+      "kind": "work",
+      "title": "Create InvoiceMate Stripe product ($39/mo) then wire Buy now",
+      "steps": "Same two edits as the other four apps once the product exists.",
+      "status": "open"
+    },
+    {
+      "id": "aj-confirm-invoice-send",
+      "kind": "aj",
+      "title": "Send one real invoice email (confirm the endpoint lock didn't break sending)",
+      "steps": "Log in to tryinvoicemate.com, send one invoice to yourself. If it arrives, the lock is complete client+server. If it errors, the client fetch is missing its Authorization header — tell the next session.",
+      "status": "open"
+    }
+  ],
+  "followups": [
+    {
+      "id": "fu-saashub",
+      "who": "SaaSHub",
+      "about": "walkerworks.co re-review",
+      "next": "Add competitors (≥1), categories (≥3), logo, pricing, LinkedIn URL, then request re-review",
+      "due": "2026-08-10",
+      "status": "open"
+    },
+    {
+      "id": "fu-abr-email",
+      "who": "AJ's accountant",
+      "about": "ACMA SMS Sender ID register blocked because the ABN has no email on the ABR",
+      "next": "Accountant adds an email at abr.gov.au; then register sender IDs",
+      "due": "2026-08-14",
+      "status": "open"
+    },
+    {
+      "id": "fu-practitioners",
+      "who": "Practitioner circle (13+ holding the $497 toolkit)",
+      "about": "The only channel that produced real engagement; 4 critiques shipped v46–v48",
+      "next": "Continue 1-to-1 conversations; no broadcast posts",
+      "due": "2026-08-07",
+      "status": "open"
+    }
+  ],
+  "clocks": [
+    {
+      "id": "clk-warmup-start",
+      "what": "Maildoso warmup — first sends at 5/mailbox/day",
+      "due": "2026-08-06",
+      "action": "Confirm WARMUP_DAILY_CAP=5 and watch bounce rate on first batch",
+      "status": "armed"
+    },
+    {
+      "id": "clk-warmup-ramp",
+      "what": "Warmup ramp checkpoint (10/mailbox/day if bounces normal)",
+      "due": "2026-08-13",
+      "action": "Raise WARMUP_DAILY_CAP to 10",
+      "status": "armed"
+    },
+    {
+      "id": "clk-clicksend-credit",
+      "what": "ClickSend trial credit ($1.84) expires — account being abandoned",
+      "due": "2026-08-15",
+      "action": "Nothing — confirm no route still reads ClickSend vars, then delete them",
+      "status": "armed"
+    },
+    {
+      "id": "clk-getreviewmate-io",
+      "what": "getreviewmate.io expires (auto-renew OFF, deliberate)",
+      "due": "2027-07-23",
+      "action": "Let it lapse. AJ: 'we will just use the .au'",
+      "status": "armed"
+    },
+    {
+      "id": "clk-saashub-review",
+      "what": "SaaSHub re-review window opens",
+      "due": "2026-08-10",
+      "action": "See fu-saashub",
+      "status": "armed"
+    }
+  ],
+  "inventory": [
+    {
+      "id": "inv-show-hn",
+      "asset": "Show HN pack",
+      "state": "complete, never submitted"
+    },
+    {
+      "id": "inv-product-hunt",
+      "asset": "Product Hunt launch pack",
+      "state": "complete, never launched"
+    },
+    {
+      "id": "inv-directories",
+      "asset": "36 directory backlink submissions",
+      "state": "listed, zero ticked"
+    },
+    {
+      "id": "inv-seo-articles",
+      "asset": "8 + 15 SEO articles",
+      "state": "written, unpublished"
+    },
+    {
+      "id": "inv-youtube-eps",
+      "asset": "YouTube EP05 + EP06",
+      "state": "recorded scripts, never uploaded; channel @AndyWalker-c6g live with EP01–04"
+    },
+    {
+      "id": "inv-reels",
+      "asset": "18 rendered weekly reels + 17 Etsy product reels",
+      "state": "rendered, never posted to YouTube Shorts/TikTok/Pinterest"
+    },
+    {
+      "id": "inv-etsy-drafts",
+      "asset": "6 new masteries + 85 pins (ETSY_LISTING_DRAFTS.html)",
+      "state": "built + validated, drafts only"
+    },
+    {
+      "id": "inv-kdp",
+      "asset": "5 KDP journals",
+      "state": "built, never published"
+    },
+    {
+      "id": "inv-wednesdays",
+      "asset": "WEDNESDAYS_WORK outreach packs (~25,000 words: 100 DMs, cold email, partnerships, 20 press pitches)",
+      "state": "written, never run"
+    },
+    {
+      "id": "inv-geo-generator",
+      "asset": "Walker Works regional/country page generator (sells geo-SEO, never pointed at itself)",
+      "state": "built, unused"
+    }
+  ]
+}

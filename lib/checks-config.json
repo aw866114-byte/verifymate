@@ -1,0 +1,49 @@
+{
+  "note": "The definition of correct, executable. Add a check here and it runs on the next cron. Silence checks read events written via /api/verdict or the journal.",
+  "checks": [
+    { "id": "tpc-home", "module": "sites", "name": "TPC homepage serves welcome.html", "type": "http", "url": "https://theprotocolcollective.com/", "mustContain": "Protocol Collective" },
+    { "id": "tpc-catalogue", "module": "sites", "name": "TPC catalogue up", "type": "http", "url": "https://theprotocolcollective.com/catalogue.html", "mustContain": "buy.stripe.com" },
+    { "id": "tpc-version", "module": "sites", "name": "TPC visible build version", "type": "version", "url": "https://theprotocolcollective.com/_version.txt" },
+    { "id": "ww-home", "module": "sites", "name": "walkerworks.co up", "type": "http", "url": "https://walkerworks.co/", "mustContain": "Walker" },
+    { "id": "ww-thanks", "module": "sites", "name": "walkerworks.co/thanks.html exists (form landing)", "type": "http", "url": "https://walkerworks.co/thanks.html" },
+    { "id": "allcare-home", "module": "sites", "name": "All Care site up", "type": "http", "url": "https://allcarepropertymanagement.com.au/", "mustContain": "All Care" },
+
+    { "id": "dns-allcare", "module": "domains", "name": "All Care MX+SPF+DMARC", "type": "dns_email", "domain": "allcarepropertymanagement.com.au" },
+    { "id": "dns-tpc", "module": "domains", "name": "TPC MX+SPF+DMARC", "type": "dns_email", "domain": "theprotocolcollective.com" },
+    { "id": "dns-ww", "module": "domains", "name": "walkerworks.co MX+SPF+DMARC", "type": "dns_email", "domain": "walkerworks.co" },
+    { "id": "dns-reviewmate-au", "module": "domains", "name": "getreviewmate.au MX+SPF+DMARC", "type": "dns_email", "domain": "getreviewmate.au" },
+    { "id": "dns-certmate", "module": "domains", "name": "getcertmate.com MX+SPF+DMARC", "type": "dns_email", "domain": "getcertmate.com" },
+    { "id": "dns-inspectmate", "module": "domains", "name": "getinspectmate.com MX+SPF+DMARC", "type": "dns_email", "domain": "getinspectmate.com" },
+    { "id": "dns-shiftsafe", "module": "domains", "name": "getshiftsafe.com MX+SPF+DMARC", "type": "dns_email", "domain": "getshiftsafe.com" },
+    { "id": "dns-invoicemate", "module": "domains", "name": "tryinvoicemate.com MX+SPF+DMARC", "type": "dns_email", "domain": "tryinvoicemate.com" },
+    { "id": "dns-leadmate", "module": "domains", "name": "tryleadmate.com MX+SPF+DMARC", "type": "dns_email", "domain": "tryleadmate.com" },
+    { "id": "dns-cascade", "module": "domains", "name": "meetcascadegroup.com MX+SPF (Maildoso)", "type": "dns_email", "domain": "meetcascadegroup.com", "expect": ["mx", "spf"] },
+    { "id": "dns-brightwater", "module": "domains", "name": "trybrightwaterpartners.com MX+SPF (Maildoso)", "type": "dns_email", "domain": "trybrightwaterpartners.com", "expect": ["mx", "spf"] },
+    { "id": "dns-northfield", "module": "domains", "name": "trynorthfielddesk.com MX+SPF (Maildoso)", "type": "dns_email", "domain": "trynorthfielddesk.com", "expect": ["mx", "spf"] },
+
+    { "id": "app-reviewmate", "module": "apps", "name": "ReviewMate up", "type": "http", "url": "https://getreviewmate.au/", "mustContain": "ReviewMate" },
+    { "id": "app-certmate", "module": "apps", "name": "CertMate up", "type": "http", "url": "https://getcertmate.com/" },
+    { "id": "app-inspectmate", "module": "apps", "name": "InspectMate up", "type": "http", "url": "https://getinspectmate.com/" },
+    { "id": "app-shiftsafe", "module": "apps", "name": "ShiftSafe up", "type": "http", "url": "https://getshiftsafe.com/" },
+    { "id": "app-invoicemate", "module": "apps", "name": "InvoiceMate up", "type": "http", "url": "https://tryinvoicemate.com/" },
+    { "id": "app-leadmate", "module": "apps", "name": "LeadMate up (owner login only, by design)", "type": "http", "url": "https://tryleadmate.com/" },
+    { "id": "app-verifymate", "module": "apps", "name": "VerifyMate up", "type": "http", "url": "https://verifymate.vercel.app/" },
+    { "id": "buy-reviewmate", "module": "apps", "name": "ReviewMate Buy now register page", "type": "http", "url": "https://getreviewmate.au/register?buy=1" },
+    { "id": "buy-certmate", "module": "apps", "name": "CertMate Buy now register page", "type": "http", "url": "https://getcertmate.com/register?buy=1" },
+    { "id": "buy-inspectmate", "module": "apps", "name": "InspectMate Buy now register page", "type": "http", "url": "https://getinspectmate.com/register?buy=1" },
+    { "id": "buy-shiftsafe", "module": "apps", "name": "ShiftSafe Buy now register page", "type": "http", "url": "https://getshiftsafe.com/register?buy=1" },
+
+    { "id": "locked-invoicemate-email", "module": "apps", "name": "InvoiceMate /api/send-email refuses strangers", "type": "locked", "url": "https://tryinvoicemate.com/api/send-email" },
+    { "id": "locked-invoicemate-sms", "module": "apps", "name": "InvoiceMate /api/send-sms refuses strangers", "type": "locked", "url": "https://tryinvoicemate.com/api/send-sms" },
+    { "id": "locked-reviewmate-send", "module": "apps", "name": "ReviewMate /api/send-request refuses strangers", "type": "locked", "url": "https://getreviewmate.au/api/send-request" },
+    { "id": "locked-certmate-notify", "module": "apps", "name": "CertMate /api/notify refuses strangers", "type": "locked", "url": "https://getcertmate.com/api/notify" },
+    { "id": "locked-leadmate-discover", "module": "outreach", "name": "LeadMate /api/discover refuses strangers (spends Google quota)", "type": "locked", "url": "https://tryleadmate.com/api/discover" },
+    { "id": "locked-leadmate-outreach", "module": "outreach", "name": "LeadMate /api/cron/outreach refuses strangers", "type": "locked", "url": "https://tryleadmate.com/api/cron/outreach" },
+    { "id": "locked-leadmate-send", "module": "outreach", "name": "LeadMate /api/send-outreach refuses strangers", "type": "locked", "url": "https://tryleadmate.com/api/send-outreach" },
+
+    { "id": "silence-ww-enquiry", "module": "leads", "name": "Walker Works enquiries — silence alarm", "type": "silence", "event": "ww-enquiry", "maxDays": 7 },
+    { "id": "silence-sale", "module": "money", "name": "Any sale, anywhere — silence alarm", "type": "silence", "event": "sale", "maxDays": 14 },
+    { "id": "silence-outreach-run", "module": "outreach", "name": "Outreach cron actually ran — silence alarm", "type": "silence", "event": "outreach-run", "maxDays": 2 },
+    { "id": "silence-etsy-visit", "module": "leads", "name": "Etsy shop checked by a session — silence alarm", "type": "silence", "event": "etsy-review", "maxDays": 7 }
+  ]
+}
