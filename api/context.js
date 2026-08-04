@@ -25,10 +25,8 @@ async function handler(req, res) {
 
     // DEPLOYED — the LIVE build version of each site, re-checked ON EVERY LOAD
     // (fetches /_version.txt right now), so it updates continuously as AJ works —
-    // never a day-old cron snapshot, never a hand-typed handoff line. Added
-    // 2026-08-04 after "v76" leaked from a handoff while the site was on v70.
-    // Trust deployed over any prose about versions. Falls back to the last
-    // stored check only if a live fetch fails.
+    // never a day-old cron snapshot, never a hand-typed handoff line. Trust
+    // deployed over any prose. Falls back to the last stored check on live-fetch fail.
     const deployed = {};
     const versionChecks = (CONFIG.checks || []).filter((c) => c.type === 'version');
     await Promise.all(versionChecks.map(async (c) => {
@@ -50,7 +48,7 @@ async function handler(req, res) {
       ok: true,
       generated: now,
       appVersion: VERSION,
-      protocol: 'Run the 20 stages. Do not raise anything settled. Do not restate a claim listed in errata. Before building, check inventory. Write back as you go (POST /api/session, /api/verdict). Done requires evidence. For what is LIVE on a site, trust deployed (re-checked live from _version.txt on every load) over any prose in handoffs or settled facts.',
+      protocol: 'Run the 20 stages. Write back as you go. Done requires evidence. For what is LIVE on a site, trust deployed (re-checked live from _version.txt on every load) over any prose in handoffs or settled facts.',
       ...state,
       deployed,
       dueClocks: due(state.clocks),
