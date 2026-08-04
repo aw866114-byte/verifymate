@@ -12,8 +12,6 @@ async function handler(req, res) {
   try {
     const state = await store.fullState();
 
-    // Latest check run + latest handoff + open approvals ride along so a session
-    // needs exactly one call before it is allowed to speak.
     let checks = null, handoff = null, approvals = [], money = null;
     if (store.writable()) {
       [checks, handoff, money] = await Promise.all([
@@ -24,6 +22,19 @@ async function handler(req, res) {
       approvals = (await store.readAll('approvals')).filter((a) => a.status === 'pending');
     }
 
+    // DEPLOYED — the live build version of each site, pulled straight from the last
+    // version check (which fetches /_version.txt). Verified truth, not a hand-typed
+    // handoff line. Added 2026-08-04 after "v76" leaked from the handoff while the
+    // site was actually on v70. Trust deployed over any prose about versions.
+    const deployed = {};
+    if (checks && Array.isArray(checks.results)) {
+      for (const r of checks.results) {
+        if (r.type === 'version') {
+          deployed[r.id] = { live: r.value, ok: r.ok, checkedAt: checks.ranAt, evidence: r.evidence };
+        }
+      }
+    }
+
     const now = new Date().toISOString();
     const due = (arr) => (arr || []).filter((c) => c.status !== 'done' && c.due && c.due <= now.slice(0, 10));
 
@@ -32,8 +43,9 @@ async function handler(req, res) {
       ok: true,
       generated: now,
       appVersion: VERSION,
-      protocol: 'Run the 20 stages. Do not raise anything settled. Do not restate a claim listed in errata. Before building, check inventory. Write back as you go (POST /api/session, /api/verdict). Done requires evidence.',
+      protocol: 'Run the 20 stages. Do not raise anything settled. Do not restate a claim listed in errata. Before building, check inventory. Write back as you go (POST /api/session, /api/verdict). Done requires evidence. For what is LIVE on a site, trust deployed (verified from _version.txt) over any prose in handoffs or settled facts.',
       ...state,
+      deployed,
       dueClocks: due(state.clocks),
       dueFollowups: due(state.followups),
       checks,
