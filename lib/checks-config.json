@@ -3,7 +3,9 @@
   "checks": [
     { "id": "tpc-home", "module": "sites", "name": "TPC homepage serves welcome.html", "type": "http", "url": "https://theprotocolcollective.com/", "mustContain": "Protocol Collective" },
     { "id": "tpc-catalogue", "module": "sites", "name": "TPC catalogue up", "type": "http", "url": "https://theprotocolcollective.com/catalogue.html", "mustContain": "buy.stripe.com" },
-    { "id": "tpc-version", "module": "sites", "name": "TPC visible build version", "type": "version", "url": "https://theprotocolcollective.com/_version.txt" },
+    { "id": "tpc-catalogue-search", "module": "sites", "name": "TPC catalogue search bar live (content signal added 2026-08-04, more reliable than the version marker)", "type": "http", "url": "https://theprotocolcollective.com/catalogue.html", "mustContain": "cat-search" },
+    { "id": "tpc-catalogue-funnels", "module": "sites", "name": "TPC $47 funnel kits live on catalogue (content signal added 2026-08-04)", "type": "http", "url": "https://theprotocolcollective.com/catalogue.html", "mustContain": "starter-47" },
+    { "id": "tpc-version", "module": "sites", "name": "TPC visible build version (INFORMATIONAL ONLY -- this marker has lagged real deploys before; trust tpc-catalogue-search / tpc-catalogue-funnels for actual deploy-state truth)", "type": "version", "url": "https://theprotocolcollective.com/_version.txt" },
     { "id": "ww-home", "module": "sites", "name": "walkerworks.co up", "type": "http", "url": "https://walkerworks.co/", "mustContain": "Walker" },
     { "id": "ww-thanks", "module": "sites", "name": "walkerworks.co/thanks.html exists (form landing)", "type": "http", "url": "https://walkerworks.co/thanks.html" },
     { "id": "allcare-home", "module": "sites", "name": "All Care site up", "type": "http", "url": "https://allcarepropertymanagement.com.au/", "mustContain": "All Care" },
@@ -41,9 +43,9 @@
     { "id": "locked-leadmate-outreach", "module": "outreach", "name": "LeadMate /api/cron/outreach refuses strangers", "type": "locked", "url": "https://tryleadmate.com/api/cron/outreach" },
     { "id": "locked-leadmate-send", "module": "outreach", "name": "LeadMate /api/send-outreach refuses strangers", "type": "locked", "url": "https://tryleadmate.com/api/send-outreach" },
 
-    { "id": "silence-ww-enquiry", "module": "leads", "name": "Walker Works enquiries — silence alarm", "type": "silence", "event": "ww-enquiry", "maxDays": 7 },
-    { "id": "silence-sale", "module": "money", "name": "Any sale, anywhere — silence alarm", "type": "silence", "event": "sale", "maxDays": 14 },
-    { "id": "silence-outreach-run", "module": "outreach", "name": "Outreach cron actually ran — silence alarm", "type": "silence", "event": "outreach-run", "maxDays": 2 },
-    { "id": "silence-etsy-visit", "module": "leads", "name": "Etsy shop checked by a session — silence alarm", "type": "silence", "event": "etsy-review", "maxDays": 7 }
+    { "id": "silence-ww-enquiry", "module": "leads", "name": "Walker Works enquiries - silence alarm", "type": "silence", "event": "ww-enquiry", "maxDays": 7 },
+    { "id": "silence-sale", "module": "money", "name": "Any sale, anywhere - silence alarm", "type": "silence", "event": "sale", "maxDays": 14 },
+    { "id": "silence-outreach-run", "module": "outreach", "name": "Outreach cron actually ran - silence alarm", "type": "silence", "event": "outreach-run", "maxDays": 2 },
+    { "id": "silence-etsy-visit", "module": "leads", "name": "Etsy shop checked by a session - silence alarm", "type": "silence", "event": "etsy-review", "maxDays": 7 }
   ]
 }
