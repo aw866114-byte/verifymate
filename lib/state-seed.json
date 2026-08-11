@@ -16,7 +16,7 @@
     },
     {
       "id": "cold-email-maildoso",
-      "text": "Cold outreach = Maildoso only. Resend is transactional/opt-in only, shared by all seven apps; cold through it risks paid-customer mail. Never propose alternatives."
+            "text": "Cold outreach goes out through the GMAIL API on AJ 4 Gmail accounts - andyw2920 = TPC, aw866114 = Walker Works, allcarepropertymanagement2444 = All Care, inandoutpcsolutions = apps. NOT Maildoso, cancelled 2026-08-05. NOT Resend, removed from the outreach path in leadmate commit b4e5776 - Resend stays transactional only, shared by all seven apps, and cold through it would risk paid-customer mail. Capped flat at WARMUP_DAILY_CAP=50 per mailbox per day, no ramp. Verified 2026-08-11 from leadmate commits b15272e and cdd2f5a.",
     },
     {
       "id": "credential-gate",
@@ -46,7 +46,7 @@
   "settled": [
     {
       "id": "cold-email-maildoso",
-      "verdict": "Cold outreach runs on Maildoso. Decided by AJ. Resend never carries cold.",
+            "verdict": "SUPERSEDED 2026-08-05 - see maildoso-cancelled and err-maildoso-superseded-gmail-2026-08-05. Cold outreach now runs on the GMAIL API through AJ 4 Gmail accounts. The original 2026-08-03 verdict read: cold outreach runs on Maildoso, Resend never carries cold. Maildoso is gone; the Resend half still holds - Resend is transactional only and never carries cold.",
       "verified": "2026-08-03",
       "do_not_reopen": true
     },
@@ -308,23 +308,6 @@
     }
   ],
   "blocked": [
-    {
-      "id": "outreach-warmup",
-      "reason": "meetcascadegroup.com / trybrightwaterpartners.com / trynorthfielddesk.com registered 2026-08-03. Start ~5/mailbox/day from ~2026-08-06, ramp 10→15→25→40. WARMUP_DAILY_CAP=5 at launch.",
-      "earliest": "2026-08-06"
-    },
-    {
-      "id": "vercel-chrome-permission",
-      "reason": "Chrome extension has no permission for vercel.com; AJ must allow it before the agent can drive Vercel settings."
-    },
-    {
-      "id": "maildoso-mailboxes-unverified",
-      "reason": "Whether MAILDOSO_MAILBOXES holds the 10 mailboxes cannot be read back (encrypted env + firewall). If empty the route refuses; it cannot fall back to Resend."
-    },
-    {
-      "id": "store-writes",
-      "reason": "Firestore read-only until aj-paste-firebase is done. App fully functional otherwise; writes refuse loudly instead of pretending."
-    }
   ],
   "queue": [
     {
