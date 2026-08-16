@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Clean out — VerifyMate</title>
+<style>
+  :root{--bg:#0b0d10;--card:#151a20;--line:#2a323c;--ink:#f2f5f8;--dim:#9fb0c0;--go:#16a34a;--keep:#1d4ed8;--warn:#b45309}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);font:500 22px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding:16px 14px 70px}
+  h1{font-size:30px;margin:6px 0 2px}
+  .sub{color:var(--dim);font-size:19px;margin:0 0 16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:16px}
+  button{width:100%;border:0;border-radius:14px;padding:20px;font:700 23px/1 inherit;color:#fff;cursor:pointer;margin-top:10px}
+  .retire{background:var(--go)} .keep{background:var(--keep)} .ghost{background:#374151;font-size:19px;padding:15px}
+  .big{font-size:27px;font-weight:700;margin:0 0 4px}
+  .count{color:#ffd68a;font-size:21px;margin-bottom:12px}
+  .sample{border-top:1px solid var(--line);padding:12px 0;font-size:18px;color:#cfd8e3}
+  .sample .when{color:var(--dim);font-size:15px}
+  .msg{margin-top:14px;font-size:20px;border-radius:12px;padding:14px;display:none}
+  .msg.ok{display:block;background:#052e16;border:1px solid #14532d;color:#bbf7d0}
+  .msg.bad{display:block;background:#3f0d0d;border:1px solid #7f1d1d;color:#fecaca}
+  .keyrow{display:flex;gap:10px}
+  .keyrow input{flex:1;background:#0b0e12;color:var(--ink);border:2px solid var(--line);border-radius:12px;padding:14px;font:500 20px inherit}
+  .keyrow button{width:auto;padding:14px 22px;background:var(--keep);font-size:20px;margin:0}
+  .safe{background:#0f1b12;border:1px solid #1c4028;color:#a7f3c0;border-radius:12px;padding:14px;font-size:19px;margin-bottom:16px}
+  .tiny{color:var(--dim);font-size:16px;margin-top:8px}
+</style>
+</head>
+<body>
+
+<h1>Clean out</h1>
+<p class="sub">One group at a time. Nothing happens until you say so.</p>
+
+<div class="safe">Nothing here is ever deleted. Retiring takes it out of your canon so no program loads it again — the fact stays stored in full and you can bring it back any time.</div>
+
+<div class="card" id="keycard">
+  <div class="keyrow">
+    <input id="key" type="password" placeholder="Your VerifyMate key" autocomplete="off">
+    <button onclick="saveKey()">Unlock</button>
+  </div>
+</div>
+
+<div id="app" style="display:none">
+  <div class="card" id="head"></div>
+  <div class="card" id="group"></div>
+  <div class="msg" id="msg"></div>
+  <button class="ghost" onclick="showRetired()">Show me what I retired</button>
+  <div id="retired"></div>
+</div>
+
+<script>
+var KEY = localStorage.getItem('vm_key') || '';
+var DATA = null, IDX = 0;
+
+function say(t){ try{ var u=new SpeechSynthesisUtterance(t);
+  var v=speechSynthesis.getVoices().filter(function(x){return /en-AU|en-GB/.test(x.lang)});
+  if(v[0]) u.voice=v[0]; u.rate=.98; speechSynthesis.cancel(); speechSynthesis.speak(u);}catch(e){} }
+function show(ok,t){ var m=document.getElementById('msg'); m.className='msg '+(ok?'ok':'bad'); m.textContent=t; say(t); }
+function esc(s){ return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]}) }
+
+function saveKey(){
+  var v=document.getElementById('key').value.trim(); if(!v) return;
+  KEY=v; localStorage.setItem('vm_key',v);
+  document.getElementById('keycard').style.display='none';
+  document.getElementById('app').style.display='block';
+  load();
+}
+
+async function api(method, payload){
+  var o={method:method, headers:{Authorization:'Bearer '+KEY,'Content-Type':'application/json'}};
+  if(payload) o.body=JSON.stringify(payload);
+  var r=await fetch('/api/cleanout'+(method==='GET'&&payload==='retired'?'?retired=1':''), method==='GET'?{headers:o.headers}:o);
+  return {status:r.status, json:await r.json().catch(function(){return{}})};
+}
+
+async function load(){
+  var r=await fetch('/api/cleanout',{headers:{Authorization:'Bearer '+KEY}});
+  if(r.status===401){ show(false,'That key was not accepted.'); localStorage.removeItem('vm_key'); return; }
+  DATA=await r.json(); IDX=0;
+  document.getElementById('head').innerHTML =
+    '<div class="big">'+DATA.totalLive+' facts in your canon</div>'+
+    '<div class="count">'+Math.round(DATA.totalBytes/1000)+' thousand characters loaded every single time</div>'+
+    '<div class="tiny">'+DATA.protectedCount+' are marked DO NOT REOPEN. They are not shown here and cannot be retired.'+
+    (DATA.retiredAlready?' '+DATA.retiredAlready+' already retired.':'')+'</div>';
+  render();
+}
+
+function render(){
+  var el=document.getElementById('group');
+  if(!DATA.groups.length){ el.innerHTML='<div class="big">Nothing left to go through.</div>'; return; }
+  if(IDX>=DATA.groups.length){
+    el.innerHTML='<div class="big">That is all of them.</div><div class="tiny">Press reload to go round again.</div>'+
+      '<button class="ghost" onclick="load()">Reload</button>';
+    say('That is all of them.'); return;
+  }
+  var g=DATA.groups[IDX];
+  el.innerHTML =
+    '<div class="big">'+esc(g.label)+'</div>'+
+    '<div class="count">'+g.count+' facts · '+Math.round(g.bytes/1000)+'k characters</div>'+
+    g.samples.map(function(s){ return '<div class="sample"><div class="when">'+esc(s.when||'')+'</div>'+esc(s.text)+'</div>' }).join('')+
+    '<button class="retire" onclick="decide(true)">RETIRE these '+g.count+'</button>'+
+    '<button class="keep" onclick="decide(false)">KEEP them</button>';
+  say(esc(g.label)+'. '+g.count+' facts. '+Math.round(g.bytes/1000)+' thousand characters. Retire or keep?');
+}
+
+async function decide(retire){
+  var g=DATA.groups[IDX];
+  if(!retire){ IDX++; render(); return; }
+  var r=await api('POST',{group:g.label, action:'retire'});
+  if(r.json.ok){ show(true, r.json.message); IDX++; setTimeout(load,600); }
+  else show(false, r.json.error||'Nothing was changed.');
+}
+
+async function showRetired(){
+  var r=await fetch('/api/cleanout?retired=1',{headers:{Authorization:'Bearer '+KEY}});
+  var d=await r.json(), el=document.getElementById('retired');
+  if(!d.retired||!d.retired.length){ el.innerHTML='<div class="card">Nothing retired yet.</div>'; say('Nothing retired yet.'); return; }
+  el.innerHTML='<div class="card"><div class="big">'+d.count+' retired</div><div class="tiny">'+esc(d.note)+'</div>'+
+    d.retired.map(function(f){
+      return '<div class="sample"><div class="when">'+esc((f.retiredAt||'').slice(0,10))+' · '+esc(f.id)+'</div>'+
+             esc(String(f.verdict||f.text||'').slice(0,200))+
+             '<button class="ghost" onclick="restore(\''+esc(f.id)+'\')">Bring this one back</button></div>';
+    }).join('')+'</div>';
+  say(d.count+' retired. All still stored. You can bring any of them back.');
+}
+
+async function restore(id){
+  var r=await api('POST',{ids:[id], action:'restore'});
+  if(r.json.ok){ show(true,'Brought back.'); showRetired(); load(); } else show(false, r.json.error||'Could not restore it.');
+}
+
+if(KEY){ document.getElementById('keycard').style.display='none';
+  document.getElementById('app').style.display='block'; load(); }
+</script>
+</body>
+</html>
