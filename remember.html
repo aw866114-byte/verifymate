@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Remember — VerifyMate</title>
+<style>
+  :root { --bg:#0b0d10; --card:#151a20; --line:#2a323c; --ink:#f2f5f8; --dim:#9fb0c0; --go:#16a34a; --hot:#dc2626; }
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:500 22px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; padding:16px 14px 64px; }
+  h1 { font-size:30px; margin:6px 0 2px; letter-spacing:-.5px; }
+  .sub { color:var(--dim); font-size:19px; margin:0 0 18px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; margin-bottom:16px; }
+  textarea { width:100%; min-height:150px; background:#0b0e12; color:var(--ink); border:2px solid var(--line);
+             border-radius:12px; padding:14px; font:500 24px/1.45 inherit; resize:vertical; }
+  textarea:focus { outline:none; border-color:#3b82f6; }
+  button { width:100%; border:0; border-radius:14px; padding:20px; font:700 24px/1 inherit; color:#fff; cursor:pointer; }
+  .mic { background:#1d4ed8; margin-bottom:12px; }
+  .mic.live { background:var(--hot); }
+  .save { background:var(--go); }
+  .save:disabled { background:#374151; color:#9ca3af; }
+  .msg { margin-top:14px; font-size:21px; border-radius:12px; padding:14px; display:none; }
+  .msg.ok { display:block; background:#052e16; border:1px solid #14532d; color:#bbf7d0; }
+  .msg.bad { display:block; background:#3f0d0d; border:1px solid #7f1d1d; color:#fecaca; }
+  .rule { border-top:1px solid var(--line); padding:16px 0; font-size:21px; }
+  .rule:first-child { border-top:0; }
+  .rule .who { color:var(--dim); font-size:16px; text-transform:uppercase; letter-spacing:.08em; margin-bottom:6px; }
+  .rule button { width:auto; padding:10px 16px; font-size:17px; background:#374151; margin-top:10px; }
+  .keyrow { display:flex; gap:10px; }
+  .keyrow input { flex:1; background:#0b0e12; color:var(--ink); border:2px solid var(--line); border-radius:12px; padding:14px; font:500 20px inherit; }
+  .keyrow button { width:auto; padding:14px 22px; background:#1d4ed8; font-size:20px; }
+  .tiny { color:var(--dim); font-size:17px; margin-top:10px; }
+</style>
+</head>
+<body>
+
+<h1>Remember this</h1>
+<p class="sub">Say it or type it. It goes into your canon, and every program you own reads it from the next job on.</p>
+
+<div class="card" id="keycard">
+  <div class="keyrow">
+    <input id="key" type="password" placeholder="Your VerifyMate key" autocomplete="off">
+    <button onclick="saveKey()">Unlock</button>
+  </div>
+  <div class="tiny">Typed once on this device, then remembered. Never shown, never sent anywhere but your own app.</div>
+</div>
+
+<div class="card" id="main" style="display:none">
+  <button class="mic" id="mic" onclick="talk()">🎤 Say the rule</button>
+  <textarea id="text" placeholder="For example: My rate is 88 dollars per man per hour including GST, and the customer never sees the hourly rate."></textarea>
+  <button class="save" id="save" onclick="save()">Save this rule</button>
+  <div class="msg" id="msg"></div>
+</div>
+
+<div class="card" id="listcard" style="display:none">
+  <div class="sub" style="margin:0 0 6px">Your rules <span id="count"></span></div>
+  <div id="list"></div>
+</div>
+
+<script>
+var KEY = localStorage.getItem('vm_key') || '';
+
+function say(t){ try{ var u=new SpeechSynthesisUtterance(t);
+  var v=speechSynthesis.getVoices().filter(function(x){return /en-AU|en-GB/.test(x.lang)});
+  if(v[0]) u.voice=v[0]; u.rate=.98; speechSynthesis.cancel(); speechSynthesis.speak(u);}catch(e){} }
+
+function show(ok,t){ var m=document.getElementById('msg'); m.className='msg '+(ok?'ok':'bad'); m.textContent=t; say(t); }
+
+function saveKey(){
+  var v=document.getElementById('key').value.trim();
+  if(!v) return;
+  KEY=v; localStorage.setItem('vm_key',v);
+  document.getElementById('keycard').style.display='none';
+  document.getElementById('main').style.display='block';
+  document.getElementById('listcard').style.display='block';
+  load();
+}
+
+function talk(){
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if(!SR){ show(false,'This browser will not listen. Type it instead.'); return; }
+  var r=new SR(); r.lang='en-AU'; r.interimResults=false; r.maxAlternatives=1;
+  var b=document.getElementById('mic'); b.classList.add('live'); b.textContent='Listening — say it now';
+  r.onresult=function(e){ var t=e.results[0][0].transcript;
+    var box=document.getElementById('text'); box.value = box.value ? box.value+' '+t : t; };
+  r.onerror=function(){ show(false,'I did not catch that. Try again, or type it.'); };
+  r.onend=function(){ b.classList.remove('live'); b.textContent='🎤 Say the rule'; };
+  r.start();
+}
+
+async function api(method, payload){
+  var opt = { method: method, headers: { 'Authorization':'Bearer '+KEY, 'Content-Type':'application/json' } };
+  if(payload) opt.body = JSON.stringify(payload);
+  var res = await fetch('/api/remember', opt);
+  return { status: res.status, json: await res.json().catch(function(){return {}}) };
+}
+
+async function save(){
+  var box=document.getElementById('text'); var t=box.value.trim();
+  if(!t){ show(false,'Nothing to save yet.'); return; }
+  var btn=document.getElementById('save'); btn.disabled=true; btn.textContent='Saving…';
+  try{
+    var r = await api('POST', { text: t });
+    if(r.status===401){ show(false,'That key was not accepted.'); localStorage.removeItem('vm_key'); }
+    else if(r.json.ok && r.json.landed){ box.value=''; show(true,'Saved, and I read it back to be sure. Every program has it now.'); load(); }
+    else show(false, r.json.error || r.json.message || 'It did not save. Nothing has been trusted.');
+  } catch(e){ show(false,'Could not reach VerifyMate. Nothing saved.'); }
+  btn.disabled=false; btn.textContent='Save this rule';
+}
+
+async function retire(id){
+  var r = await api('POST', { id: id, retire: true });
+  if(r.json.ok){ show(true,'Removed.'); load(); } else show(false, r.json.error||'Could not remove it.');
+}
+
+async function load(){
+  var r = await api('GET');
+  if(r.status===401){ show(false,'That key was not accepted.'); localStorage.removeItem('vm_key'); return; }
+  var d=r.json, el=document.getElementById('list'); el.innerHTML='';
+  document.getElementById('count').textContent = '— '+(d.mine||[]).length+' yours, '+(d.builtIn||[]).length+' built in';
+  if(d.writable===false) show(false,'Warning: the store is not writable, so nothing can be remembered.');
+  (d.mine||[]).forEach(function(x){
+    var n=document.createElement('div'); n.className='rule';
+    n.innerHTML='<div class="who">Yours</div>'+esc(x.text)+'<br><button>Remove</button>';
+    n.querySelector('button').onclick=function(){ retire(x.id) };
+    el.appendChild(n);
+  });
+  (d.builtIn||[]).forEach(function(x){
+    var n=document.createElement('div'); n.className='rule';
+    n.innerHTML='<div class="who">Built in</div>'+esc(x.text);
+    el.appendChild(n);
+  });
+}
+
+function esc(s){ return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]}) }
+
+if(KEY){ document.getElementById('keycard').style.display='none';
+  document.getElementById('main').style.display='block';
+  document.getElementById('listcard').style.display='block'; load(); }
+</script>
+</body>
+</html>
